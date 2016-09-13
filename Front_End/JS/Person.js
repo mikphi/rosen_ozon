@@ -36,7 +36,7 @@ Person.functions = {
                     $a.on("click", function () { UOffice.functions.renderUOffice(); });
                     $a.text(" Gå in på arbetsförmedlingen");
                     $personMenu.append($a);
-                   
+
                     break;
             }
         }
@@ -67,7 +67,7 @@ Person.functions = {
 
     renderEnterCarOptions: function (person) {
 
-        var vehicles = _.filter(Map.items, function (item) { return item.tileid == person.tileid && item.type == "car" && item.special.passengers.length < item.special.seats; });
+        var vehicles = _.filter(Map.items, function (item) { return item.tileid == person.tileid && item.type == "car" && item.passengers.length < item.seats; });
 
         if (vehicles.length == 0)
             return
@@ -78,7 +78,7 @@ Person.functions = {
 
         for (var i = 0; i < vehicles.length; i++) {
 
-            if (vehicles[i].special.passengers.length < vehicles[i].special.seats) {
+            if (vehicles[i].passengers.length < vehicles[i].seats) {
                 $p = $("<p>");
                 $a = $("<a>");
                 $a.text(vehicles[i].name);
@@ -103,9 +103,9 @@ Person.functions = {
     },
 
     enterCar: function (person, vehicle) {
-        person.special.invehicle = true;
+        person.invehicle = true;
         Item.functions.renderItem(person);
-        vehicle.special.passengers.push(person.itemid);
+        vehicle.passengers.push(person.itemid);
         Item.functions.renderItem(vehicle, true);
         Menus.functions.closeItemMenu();
 
@@ -113,4 +113,3 @@ Person.functions = {
 
 
 }
-

@@ -22,17 +22,17 @@ Vehicle.functions = {
 
     renderPassenger: function (vehicle) {
 
-       
+
         $seatsContent = $("<div>");
         $seatsContent.addClass("vehicle-seats-content");
-        $seatsContent.append("<div>" + vehicle.special.passengers.length + " av " + vehicle.special.seats + " säten upptagna</div>");
+        $seatsContent.append("<div>" + vehicle.passengers.length + " av " + vehicle.seats + " säten upptagna</div>");
 
-        for (var i = 0; i < vehicle.special.seats; i++) {
+        for (var i = 0; i < vehicle.seats; i++) {
             (function () {
 
                 $seat = $("<div>");
                 $seat.addClass("vehicle-seat");
-                var passenger = vehicle.special.passengers[i];
+                var passenger = vehicle.passengers[i];
 
                 if (passenger) {
                     $passenger = $("<div>");
@@ -46,9 +46,9 @@ Vehicle.functions = {
                     $passenger.append(passengerObject.name);
                     $a = $("<a>");
                     $a.on("click", function () {
-                        passengerObject.special.invehicle = false;
+                        passengerObject.invehicle = false;
                         Item.functions.renderItem(passengerObject);
-                        vehicle.special.passengers = _.reject(vehicle.special.passengers, function (passenger) { return passenger == passengerObject.itemid; });
+                        vehicle.passengers = _.reject(vehicle.passengers, function (passenger) { return passenger == passengerObject.itemid; });
                         Item.functions.openItemMenu(vehicle);
                         Item.functions.renderItem(vehicle,true);
                     });
@@ -81,12 +81,12 @@ Vehicle.functions = {
             html += "</div>";
             return html;
         }
-        
+
         return "";
     },
 
     renderFuelLevel: function (vehicle) {
-        $(".left-content").append("<div class='vehicle-fuel'><img src='images/fueltank.png'><br />" + vehicle.energy + " liter<div> ( " + (vehicle.special.fueltank - vehicle.energy) + " ltr till full tank)</div></div>");
+        $(".left-content").append("<div class='vehicle-fuel'><img src='images/fueltank.png'><br />" + vehicle.energy + " liter<div> ( " + (vehicle.fueltank - vehicle.energy) + " ltr till full tank)</div></div>");
     },
 
     changeTileIdOnPassengers: function (passengers,tileid) {
@@ -104,6 +104,6 @@ Vehicle.functions = {
 
 
 Vehicle.constants = {
-   
+
 
 }

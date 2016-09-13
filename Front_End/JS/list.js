@@ -1,55 +1,50 @@
-﻿var List = {
-    options: { islinkable: false, appendelement: "", linkfunction: null,displayheader:true },
-    columns: [],
-    propertiesToRender: {},
-    init: function (items,propertiestorender,options,columns)
-    {
-        this.propertiesToRender = propertiestorender;
-        this.columns = columns;
-        this.functions.setOptions(options);
-        this.functions.renderList(items);
-    }
-}
+function List(items,propertiestorender,options,columns) {
+    var options = options || { islinkable: false, appendelement: "", linkfunction: null,displayheader:true }
+    var columns = columns
+    var propertiesToRender = propertiestorender
 
-List.functions = {
-    renderList: function (items)
+    //setOptions(options);
+    renderList(items);
+
+
+    function renderList (items)
     {
-        $(List.options.appendelement).empty();
-        
-        if(List.options.displayheader)
+        $(options.appendelement).empty();
+
+        if(options.displayheader)
         {
             $header = $("<div>");
             $header.addClass("list-row");
-            $.each(List.columns, function (index, column) {
-                $div = $("<div>");              
+            $.each(columns, function (index, column) {
+                $div = $("<div>");
                 $div.width(column.width);
                 $div.text(column.name);
                 $header.append($div);
             });
 
-            $(List.options.appendelement).append($header);
+            $(options.appendelement).append($header);
         }
 
         $.each(items, function (index, item) {
             $div = $("<div>");
             $div.addClass("list-row");
 
-            if (List.options.islinkable)
+            if (options.islinkable)
             {
                 $div.on("click", function () {
-                    //alert(item[List.options.linkproperty]);
-                    List.options.linkfunction(item);
+                    //alert(item[this.options.linkproperty]);
+                    options.linkfunction(item);
                 });
             }
-            var list = List.propertiesToRender;
+            var list = propertiesToRender;
 
             for (var i = 0; i < list.length; i++)
             {
                 var prop = item[list[i]];
-                var columnSetting = List.columns[i];
+                var columnSetting = columns[i];
                 $propdiv = $("<div>");
                 $propdiv.css("width", columnSetting.width);
-                
+
                 if (!prop.toString().match(/png/g)) {
                     $propdiv.text(prop);
                 }
@@ -58,33 +53,32 @@ List.functions = {
                     $img.attr("src", "images/" + prop);
                     $propdiv.append($img);
                 }
-               
+
                 $div.append($propdiv);
             }
 
-            $(List.options.appendelement).append($div);
+            $(options.appendelement).append($div);
         });
 
-   
+      }
 
-    },
 
-    setOptions: function(options){
-        
-        var optionskeys = Object.keys(options);
 
-        $.each(List.options, function (key, value) {
+    // function setOptions(options){
+    //
+    //     var optionskeys = Object.keys(options);
+    //
+    //     $.each(options, function (key, value) {
+    //
+    //         var k = _.find(optionskeys, function (num) { return num == key; });
+    //         if (k != undefined)
+    //         {
+    //             options[key] = options[k];
+    //
+    //         }
+    //     });
+    //
+    // }
 
-            var k = _.find(optionskeys, function (num) { return num == key; });
-            if (k != undefined)
-            {
-                List.options[key] = options[k];
 
-            }
-        });
-       
-    }
-
-    
-    
 }

@@ -3,25 +3,25 @@
 }
 
 Item.functions = {
-    
+
     renderItem: function (item,keepoldposition)
     {
-        
+
         var left, topMargin;
         var tile = _.findWhere(Map.tiles, { tileid: item.tileid });
 
         var belongsToPlayer = item.playerid == Player.player.id;
-       
+
         var constants = Item.functions.getConstants(item);
-        
+
         if (keepoldposition)
         {
            left = parseInt($("#item-id" + item.itemid).css("left"));
            topMargin = $("#item-id" + item.itemid).css("margin-top");
-        }       
+        }
         $("#item-id" + item.itemid).remove();
 
-        if (item.type == "person" && item.special.invehicle) {
+        if (item.type == "person" && item.invehicle) {
             return;
         }
 
@@ -40,16 +40,16 @@ Item.functions = {
         {
             html += "<img src='images/" + item.img + "'>";
             html += "<div class='item-name' style='color:" + item.color + "'>" + item.name + "</div>";
-            html += Vehicle.functions.renderPassangerIcons(item.special.passengers);
+            html += Vehicle.functions.renderPassangerIcons(item.passengers);
         }
 
         html += "</div>";
 
         $("#tile" + tile.tileid).append(html);
-        
+
         if(belongsToPlayer)
             $("#item-id" + item.itemid).on("mousedown", function () { Item.functions.openItemMenu(item) });
-        
+
     },
 
     getConstants: function(item)
@@ -65,7 +65,7 @@ Item.functions = {
     },
 
     openItemMenu: function (item) {
-       
+
         Map.itemActive = item;
         Map.isItemClicked = true;
         var constants = Item.functions.getConstants(item);
@@ -82,7 +82,7 @@ Item.functions = {
             left: parseInt($("#tile" + tile.tileid).css("left")) - parseInt( constants.WIDTH),
             width: constants.WIDTH,
             height: "auto"
-           
+
         });
 
 
@@ -99,9 +99,9 @@ Item.functions = {
                 Vehicle.functions.renderMenu($menu, item);
                 break;
         }
-        
 
-        
+
+
 
     },
 
@@ -109,21 +109,21 @@ Item.functions = {
     {
 
         $(".tile-action-marker").css("display", "block");
-        
+
         Menus.functions.openPlayerMsgDialog("Klicka på den rutan som du vill ta dig till.");
-        
+
 
         var item = Map.itemActive;
 
         var constants = Item.functions.getConstants(item);
-      
+
         var tile = _.findWhere(Map.tiles, { tileid: item.tileid });
 
         var potentialDistance = item.energy / constants.ENERGY_TO_MOVE_ONE_TILE;
-        
+
         Map.markerActivated = true;
         Map.markerUsage = "DisplayMovementDialog";
-     
+
         for (var i = 0; i < Map.tiles.length; i++) {
 
             var distanceToTile = (Math.abs(Map.tiles[i].y - tile.y) + (Math.abs(Map.tiles[i].x - tile.x)));
@@ -131,8 +131,8 @@ Item.functions = {
             if (distanceToTile <= potentialDistance) {
                $("#tile" + Map.tiles[i].tileid).children(".tile-action-marker").css("display", "none");
                Map.tiles[i].energytogethere = distanceToTile * constants.ENERGY_TO_MOVE_ONE_TILE;
-            }            
-               
+            }
+
         }
     },
 
@@ -143,7 +143,7 @@ Item.functions = {
         item.tileid = tile.tileid;
         Map.tiles.forEach(function (t) { t.energytogethere = 0; });
 
-        if (item.special.passengers) { Vehicle.functions.changeTileIdOnPassengers(item.special.passengers, tile.tileid); }
+        if (item.passengers) { Vehicle.functions.changeTileIdOnPassengers(item.passengers, tile.tileid); }
         Item.functions.renderItem(item);
         Item.functions.openItemMenu(item);
         $("#menu-move").hide();
@@ -194,7 +194,7 @@ Item.constants = {
         LEFT_STARTING_POSITION: 50,
         TOP_MARGIN: "-6px",
         WIDTH: "300px",
-        
+
     },
     PERSON_CONSTANTS: {
         ENERGY_TO_MOVE_ONE_TILE: 20,
@@ -202,10 +202,6 @@ Item.constants = {
         LEFT_STARTING_POSITION: 40,
         TOP_MARGIN: "15px",
         WIDTH:"200px",
-       
+
     }
 }
-
-
-
-

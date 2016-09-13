@@ -1,10 +1,11 @@
+
 var Player = {
     player: {},
 
     init: function ()
     {
         this.player = this.functions.getPlayer();
-      
+
     }
 };
 
@@ -13,25 +14,45 @@ Player.functions = {
     getPlayer: function ()
     {
 
-        return { id: 1, mapid: 15, color: "#6ED2FA", cash: 3000, name: "Lungans Vänner AB" };
+        return { id: 1, mapid: 15, color: "#6ED2FA", cash: 3000, name: "Lungans Vï¿½nner AB" };
     },
-
+    show: function(player){
+      console.log(player)
+    },
     renderPlayerInfo:function()
     {
         var player = Player.player;
         $("#player-name").text(player.name);
 
         var persons = _.filter(Map.items, function (item) { return item.type == "person" && item.playerid == player.id; });
-        
-        var options = { islinkable: true, appendelement: "#menu-persons-content", linkfunction: alert, displayheader:false };
+
+        var options = { islinkable: true, appendelement: "#menu-persons-content", linkfunction: this.show, displayheader:false };
         var propertiestorender = ["smallimg", "name", "persontype"];
         var columns = [
             { name: "", width: "20%" },
             { name: "namn", width: "60%" },
             { name: "persontype", width: "20%" }];
-           
-        List.init(persons, propertiestorender, options, columns);
+        var list = new List(persons, propertiestorender, options, columns);
 
+
+        //for (var i = 0; i < persons.length; i++)
+        //{
+        //    var person = persons[i];
+        //    $p = $("<p>");
+
+
+        //    $img = $("<img>");
+        //    $img.attr("src", "images/" + person.img);
+
+        //    $div = $("<div>");
+        //    $div.addClass("menu-persons-avatar");
+        //    $div.append($img);
+        //    $p.append($div);
+        //    $p.append(person.name);
+
+        //    $("#menu-persons").append($p);
+
+        //}
 
         var vehicles = _.filter(Map.items, function (item) { return item.type != "person" && item.playerid == player.id; });
 
@@ -63,5 +84,3 @@ Player.functions = {
     }
 
 };
-
-
