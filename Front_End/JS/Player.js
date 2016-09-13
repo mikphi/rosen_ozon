@@ -14,7 +14,7 @@ Player.functions = {
     getPlayer: function ()
     {
 
-        return { id: 1, mapid: 15, color: "#6ED2FA", cash: 3000, name: "Lungans V�nner AB" };
+        return { id: 1, mapid: 15, color: "#6ED2FA", cash: 3000, name: "Lungans Vänner AB" };
     },
     show: function(player){
       console.log(player)
@@ -26,7 +26,7 @@ Player.functions = {
 
         var persons = _.filter(Map.items, function (item) { return item.type == "person" && item.playerid == player.id; });
 
-        var options = { islinkable: true, appendelement: "#menu-persons-content", linkfunction: this.show, displayheader:false };
+        var options = { islinkable: true, appendelement: "#menu-persons-content", linkfunction: this.show, displayheader:false, imgheight:'33px', imgwidth:'33px' };
         var propertiestorender = ["smallimg", "name", "persontype"];
         var columns = [
             { name: "", width: "20%" },
@@ -35,52 +35,22 @@ Player.functions = {
         var list = new List(persons, propertiestorender, options, columns);
 
 
-        //for (var i = 0; i < persons.length; i++)
-        //{
-        //    var person = persons[i];
-        //    $p = $("<p>");
-
-
-        //    $img = $("<img>");
-        //    $img.attr("src", "images/" + person.img);
-
-        //    $div = $("<div>");
-        //    $div.addClass("menu-persons-avatar");
-        //    $div.append($img);
-        //    $p.append($div);
-        //    $p.append(person.name);
-
-        //    $("#menu-persons").append($p);
-
-        //}
 
         var vehicles = _.filter(Map.items, function (item) { return item.type != "person" && item.playerid == player.id; });
 
-        for (var i = 0; i < vehicles.length; i++) {
-            var vehicle = vehicles[i];
-            $p = $("<p>");
+        //     $p.click((function (vehicle) {
+        //         return function () {
+        //             Item.functions.openItemMenu(vehicle);
+        //         };
+        //     })(vehicle));
 
-
-            $img = $("<img>");
-            $img.attr("src", "images/" + vehicle.img);
-
-            $div = $("<div>");
-            $div.addClass("menu-vehicle-avatar");
-            $div.append($img);
-            $p.append($div);
-            $p.append(vehicle.name);
-
-
-
-            $p.click((function (vehicle) {
-                return function () {
-                    Item.functions.openItemMenu(vehicle);
-                };
-            })(vehicle));
-
-            $("#menu-vehicles").append($p);
+        //    $("#menu-vehicles").append($p);
+        var options = { islinkable: true, appendelement: "#menu-vehicles-content", linkfunction: this.show, displayheader:false, imgheight:'30px', imgwidth: '25px' };
+        var propertiestorender = ["img", "name"];
+        var columns = [
+            { name: "", width: "30%" },
+            { name: "namn", width: "70%" }]
+        var list = new List(vehicles, propertiestorender, options, columns);
 
         }
     }
-
-};

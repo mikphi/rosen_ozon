@@ -12,13 +12,13 @@
 .list-row div {
     float:left;
     padding:4px 0px 4px 0px;
-   
+
     text-align:left;
- 
+
 }
 
 .list-row:nth-child(odd) {
-    background-color:#e2e2e3;
+    /*background-color:#e2e2e3;*/
 }
 
 .list-column-2 {

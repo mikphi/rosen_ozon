@@ -1,0 +1,17 @@
+﻿#menu-item {  
+   z-index:10000;
+   height:auto;
+   
+}
+
+.item-name {
+    height:30px;
+    border:0px solid black;
+   /* word-break: break-all;*/
+}
+
+
+.left-content
+{
+    float:left;
+    }

@@ -1,0 +1,62 @@
+﻿.content
+{
+    width:240px;
+    height:191px;
+    border:0px solid black;
+    position:relative;
+    float:left;
+}
+
+
+.content img
+{
+    position:absolute;
+    }
+    
+.content .highlight
+{
+    top:28px;
+    opacity: 0.0;
+    }
+
+.content .hover
+{
+    top:28px;
+    opacity:0.8;
+    }
+ 
+.content .walls
+{
+    top:45px;
+    left: 25px;
+    position:absolute;
+    }
+    
+.content .windows-night
+{
+    display:none;
+    }
+    
+ 
+#row1
+{
+    display:block;
+}
+
+ 
+#row2
+{
+    display:block;
+    position:absolute;
+    top:76px;
+    left:128px;
+}
+
+
+#row3
+{
+    display:block;
+    position:absolute;
+    top:144px;
+    left:8px;
+}

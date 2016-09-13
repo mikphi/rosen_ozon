@@ -1,5 +1,8 @@
 function List(items,propertiestorender,options,columns) {
-    var options = options || { islinkable: false, appendelement: "", linkfunction: null,displayheader:true }
+    var defaultValues = { islinkable: false, appendelement: "", linkfunction: null,displayheader:true,
+     oddcolor: '#333', evencolor: '#BBB', imgheight: '20px', imgwidth:'20px'  }
+    var options = setOptions(options, defaultValues)
+    console.log(options)
     var columns = columns
     var propertiesToRender = propertiestorender
 
@@ -28,7 +31,7 @@ function List(items,propertiestorender,options,columns) {
         $.each(items, function (index, item) {
             $div = $("<div>");
             $div.addClass("list-row");
-
+            $div.css("background-color", index % 2 ? options.oddcolor : options.evencolor)
             if (options.islinkable)
             {
                 $div.on("click", function () {
@@ -43,7 +46,8 @@ function List(items,propertiestorender,options,columns) {
                 var prop = item[list[i]];
                 var columnSetting = columns[i];
                 $propdiv = $("<div>");
-                $propdiv.css("width", columnSetting.width);
+
+                $propdiv.css({"width": columnSetting.width, "line-height": options.imgheight});
 
                 if (!prop.toString().match(/png/g)) {
                     $propdiv.text(prop);
@@ -51,6 +55,7 @@ function List(items,propertiestorender,options,columns) {
                 else {
                     $img = $("<img>");
                     $img.attr("src", "images/" + prop);
+                    $img.attr({"height": options.imgheight, "width": options.imgwidth})
                     $propdiv.append($img);
                 }
 
@@ -64,21 +69,22 @@ function List(items,propertiestorender,options,columns) {
 
 
 
-    // function setOptions(options){
-    //
-    //     var optionskeys = Object.keys(options);
-    //
-    //     $.each(options, function (key, value) {
-    //
-    //         var k = _.find(optionskeys, function (num) { return num == key; });
-    //         if (k != undefined)
-    //         {
-    //             options[key] = options[k];
-    //
-    //         }
-    //     });
-    //
-    // }
+    function setOptions(options, defaultValues){
+
+        var optionskeys = Object.keys(defaultValues);
+
+        $.each(options, function (key, value) {
+
+            var k = _.find(optionskeys, function (num) { return num == key; });
+            if (k != undefined)
+            {
+                defaultValues[key] = options[k];
+
+            }
+        });
+
+        return defaultValues
+    }
 
 
 }

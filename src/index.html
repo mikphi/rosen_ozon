@@ -1,0 +1,121 @@
+<html>
+<head>
+    <title>-| B E T O N G E N . c o m |-</title>
+    <link rel="stylesheet" type="text/css" href="css/supreme.css">
+    <link rel="stylesheet" type="text/css" href="css/tile.css">
+    <link rel="stylesheet" type="text/css" href="css/map.css">
+
+    <link rel="stylesheet" type="text/css" href="css/person.css">
+    <link rel="stylesheet" type="text/css" href="css/menus.css">
+    <link rel="stylesheet" type="text/css" href="css/item.css">
+    <link rel="stylesheet" type="text/css" href="css/grid.css">
+     <link rel="stylesheet" type="text/css" href="css/vehicle.css">
+    <link rel="stylesheet" type="text/css" href="css/list.css">
+    <script src="JS/libs/jquery-3.0.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="JS/libs/underscore-min.js"></script>
+    <script type="text/javascript" src="JS/libs/jquery-ui.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,600,600italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div id="content">
+
+
+        <div id="map">
+            <div id="sky"></div>
+            <div id="land"></div>
+
+            <div id="menu-item" class="dialog draggable">
+                <div class="menu-top">
+                    <a href="#" class="menu-close" id="menu-close-item-menu">X</a>
+                     <h4 id="menu-item-name"></h4>
+                </div>
+                <div class="left-content"></div>
+                <img src="" id="item-picture"/>
+                <div id="item-specific-content"></div>
+            </div>
+
+            <div id="menu-tile" class="dialog draggable">
+                <div class="menu-top">
+                    <a href="#" class="menu-close menu-generic-close" id="menu-close-tile-menu">X</a>
+                    <h4></h4>
+                </div>
+
+                <div id="menu-tile-content">
+                    <img id="menu-tile-picture"/>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <div id="menu-uoffice" class="dialog">
+            <div class="menu-top">
+                <a href="#" class="menu-close menu-generic-close">X</a>
+                <h4>Arbetsf�rmedlingen</h4>
+            </div>
+            <h2>V�lkommen!</h2>
+            <div id="menu-uoffice-focus">
+                <div class="grid-big" id="menu-uoffice-focus-text">
+                    Ny p� arbetsf�rmedlingen:
+                    <h2 id="menu-uoffice-name"></h2>
+                    <div id="menu-uoffice-quote"></div>
+                </div>
+                <div class="grid-small">
+                    <img id="menu-uoffice-focus-img"/>
+                    <button id="recruit">Värva</button>
+                </div>
+            </div>
+            <div id="menu-uoffice-unemployed-list"></div>
+        </div>
+
+        <div id="menu-player" class="dialog">
+            <div class="menu-top">
+                <h3 id="player-name"></h3>
+            </div>
+        </div>
+
+
+
+        <div id="menu-vehicles" class="dialog">
+            <div class="menu-top">
+                <h3>Fordon</h3>
+            </div>
+        </div>
+        <div id="menu-persons" class="dialog">
+            <div class="menu-top">
+                <h3>G�nget</h3>
+            </div>
+            <div id="menu-persons-content"></div>
+        </div>
+
+        <div id="notification-msg" class="dialog">
+            <a href="#" class="menu-close" id="menu-close-notification-msg">X</a>
+            <div id="notification-msg-text"></div>
+        </div>
+
+        <div id="menu-move" class="dialog draggable">
+            <div id="menu-move-content"></div>
+            <div class="menu-move-confirmation-selection">
+                <a href="#" id="menu-move-confirmation-yes">JA</a>
+                <a href="#" id="menu-move-confirmation-no">NEJ</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="JS/List.js"></script>
+    <script type="text/javascript" src="JS/PowerOn.js"></script>
+    <script type="text/javascript" src="JS/Map.js"></script>
+    <script type="text/javascript" src="JS/temptiles.js"></script>
+    <script type="text/javascript" src="JS/Player.js"></script>
+    <script type="text/javascript" src="JS/Tile.js"></script>
+
+    <script type="text/javascript" src="JS/Menus.js"></script>
+    <script type="text/javascript" src="JS/Person.js"></script>
+    <script type="text/javascript" src="JS/Vehicle.js"></script>
+    <script type="text/javascript" src="JS/Item.js"></script>
+    <script type="text/javascript" src="JS/UOffice.js"></script>
+
+</body>
+</html>

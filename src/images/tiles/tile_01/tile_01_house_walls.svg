@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="201.814px" height="99.589px" viewBox="0 0 201.814 99.589" xml:space="preserve">
+<polygon fill="#08B6C8" class="walls-shape" points="151.041,34.826 151.041,87.258 167.499,96.696 167.499,44.266 "/>
+<polygon fill="#0B949A" points="167.499,44.266 167.499,96.696 184.081,87.129 184.081,35.081 "/>
+<polygon fill="#0B949A" points="185.229,83.939 185.229,32.913 201.814,23.728 201.814,74.756 "/>
+<polygon fill="#0B949A" points="16.584,99.589 16.584,73.564 33.083,64.21 33.083,90.147 "/>
+<polygon fill="#08B6C8" points="0,64.295 0,90.233 16.584,99.589 16.584,73.564 "/>
+<polygon fill="#0B949A" points="34.359,89.468 34.359,63.444 50.772,54.089 50.772,80.113 "/>
+<polygon fill="#08B6C8" points="88.916,51.92 88.916,13.649 64.932,0 64.932,38.143 "/>
+<polygon fill="#0B949A" points="113.025,0 113.025,38.016 88.916,51.92 88.916,13.649 "/>
+</svg>
