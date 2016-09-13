@@ -1,0 +1,38 @@
+﻿.list {
+
+    padding:3px;
+    margin:10px;
+}
+
+.list-row {
+    width:100%;
+    overflow:auto;
+}
+
+.list-row div {
+    float:left;
+    padding:4px 0px 4px 0px;
+   
+    text-align:left;
+ 
+}
+
+.list-row:nth-child(odd) {
+    background-color:#e2e2e3;
+}
+
+.list-column-2 {
+    width:20%;
+}
+
+.list-column-4 {
+    width:40%;
+}
+
+.list-column-6 {
+    width:60%;
+}
+
+.list-column-8 {
+    width:80%;
+}

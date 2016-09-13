@@ -1,0 +1,86 @@
+﻿
+.tile img {
+    position:absolute;
+}
+
+.tile{
+    position:absolute;
+    display:block;
+    width:240px;
+    height:191px;
+
+}
+
+
+
+.tile-windows-night {
+    display:none;
+    opacity:0.5;
+}
+
+.tile-highlight-area {
+
+    cursor:pointer;
+    
+}
+
+
+
+.tile-highlight {
+    position: absolute;
+    top:14px;
+    display:block;
+ 
+}
+
+.tile-walls {
+    position:absolute;
+    top:30px;
+    left:15px;
+}
+
+.tile-walls-one {
+    top:46px;
+    left:26px;
+}
+
+
+.tile-walls-two {
+    top:54px;
+    left:26px;
+}
+
+.tile-walls-three {
+    top:56px;
+    left:15px;
+}
+
+
+.tile-walls-four {
+    top:31px;
+    left:25px;
+}
+
+.tile-area {
+    position:absolute;
+    opacity:0.1;
+}
+
+.tile-area:hover {
+    position:absolute;
+    opacity:1;
+}
+
+.tile-marker {
+    display:none;
+    position:absolute;
+}
+
+.tile-action-marker {
+    display:block;
+    position: absolute;
+    top:14px;
+    opacity:0.8;
+    display:none;
+    
+}
