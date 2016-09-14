@@ -9,7 +9,7 @@
     z-index:100000000;
     display:none;
     font-size:9pt;
-    border:1px solid #1f1f1f; /*#1e1e1e;*/
+    border:2px solid #1f1f1f; /*#1e1e1e;*/
     /*box-shadow: 1px 1px 1px #000000;*/
     /*background-image: url('../images/menus/menu_bg.png');*/
 
@@ -100,7 +100,7 @@
 
 #menu-persons {
     width:300px;
-    height: 200px;
+
     display:block;
     top:220px;
     left:100px;
@@ -114,8 +114,9 @@
 
 }
 #menu-persons-content {
-  height:80%;
-  overflow: scroll;
+  height:170px;
+  overflow-y: scroll;
+  margin-top:-10px;
 }
 
     #menu-persons img {
@@ -129,7 +130,6 @@
 
 #menu-vehicles {
      width:300px;
-    height: 200px;
     display:block;
     top:430px;
     left:100px;
@@ -145,8 +145,10 @@
 
 }
 #menu-vehicles-content { 
-  height:80%;
-  overflow:scroll;
+
+  height:170px;
+  overflow-y:scroll;
+    margin-top:-10px;
 }
 
     #menu-vehicles p:hover {

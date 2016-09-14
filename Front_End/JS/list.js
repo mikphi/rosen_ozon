@@ -55,7 +55,7 @@ function List(items,propertiestorender,options,columns) {
                 else {
                     $img = $("<img>");
                     $img.attr("src", "images/" + prop);
-                    $img.attr({"height": options.imgheight, "width": options.imgwidth})
+                    $img.css({"height": options.imgheight, "width": options.imgwidth})
                     $propdiv.append($img);
                 }
 
