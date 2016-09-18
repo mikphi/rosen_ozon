@@ -14,15 +14,18 @@ Player.functions = {
     getPlayer: function ()
     {
 
-        return { id: 1, mapid: 15, color: "#6ED2FA", cash: 3000, name: "Lungans Vänner AB" };
+        return { id: 1, mapid: 15, color: "#6ED2FA", cash: 3000, name: "Lungans Vänner AB", money:100 };
     },
+
     show: function(player){
       console.log(player)
     },
+
     renderPlayerInfo:function()
     {
         var player = Player.player;
         $("#player-name").text(player.name);
+        $("#player-money").text(player.money + " pixar");
 
         var persons = _.filter(Map.items, function (item) { return item.type == "person" && item.playerid == player.id; });
 
@@ -37,14 +40,7 @@ Player.functions = {
 
 
         var vehicles = _.filter(Map.items, function (item) { return item.type != "person" && item.playerid == player.id; });
-
-        //     $p.click((function (vehicle) {
-        //         return function () {
-        //             Item.functions.openItemMenu(vehicle);
-        //         };
-        //     })(vehicle));
-
-        //    $("#menu-vehicles").append($p);
+    
         var options = { islinkable: true, appendelement: "#menu-vehicles-content", linkfunction: this.show, displayheader:false, imgheight:'25px', imgwidth: '50px',oddcolor:"#787878" };
         var propertiestorender = ["img", "name"];
         var columns = [
@@ -52,5 +48,21 @@ Player.functions = {
             { name: "namn", width: "80%" }]
         var list = new List(vehicles, propertiestorender, options, columns);
 
+
+    },
+
+    moneyTransaction: function(price)
+    {
+
+        if(Player.player.money < price)
+        {
+
+              Menus.functions.openPlayerMsgDialog("Du har inte råd!");
+              return false;
+        }
+        else {
+            Player.player.money -= price;
+            return true;
         }
     }
+  }

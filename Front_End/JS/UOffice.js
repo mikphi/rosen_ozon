@@ -15,10 +15,10 @@ UOffice.functions = {
     renderUOffice: function () {
 
         var unemployed = UOffice.unemployedPersons;
-          this.renderFocusUnemployed(unemployed[0]);
+          UOffice.functions.renderFocusUnemployed(unemployed[0]);
 
           //generate list
-          var options = { islinkable: true,displayheader: true, appendelement: "#menu-uoffice-unemployed-list", linkfunction: this.renderFocusUnemployed };
+          var options = { islinkable: true,displayheader: true, appendelement: "#menu-uoffice-unemployed-list", linkfunction: this.renderFocusUnemployed, oddcolor:"white" };
           var propertiestorender = ["smallimg", "name", "quote", "persontype", "dailycost"];
           var columns = [
               { name: "", width: "10%" },
@@ -80,7 +80,7 @@ UOffice.temppersons = [
   persontype: "lanare",
   dailycost:10,
   energy: 100,
-  attributes: { strength: 10, drugtolerance: 19 } },
-{ tileid: 35, itemid: 1292,  tileid:70,type:"person",name: "Raven", img: "persons/1.png", smallimg: "persons/1head.png", quote: "Life is pain, and so is unemployment", color: "", persontype: "gothare", dailycost: 10, attributes: { strength: 11, drugtolerance: 13 } },
-{ tileid: 35, itemid: 122, tileid:103, type:"person",name: "Felix Reinfeldt", img: "persons/1.png", smallimg: "persons/1head.png", quote: "privatisera arbetsförmedlingen.", color: "", persontype: "adeln", dailycost: 10, attributes: { strength: 13, drugtolerance: 15 } }
+  attributes: {strenght:6,mobility:4,intelligence:4,leadership:1, weaponhandling:9, influence:10, currage:5, drugtolerance:7, workmoral:7, alcoholtolerant:2} },
+{ tileid: 35, itemid: 1292,  tileid:70,type:"person",name: "Raven", img: "persons/1.png", smallimg: "persons/1head.png", quote: "Life is pain, and so is unemployment", color: "", persontype: "gothare", dailycost: 10, attributes: {strenght:6,mobility:8,intelligence:3,leadership:4, weaponhandling:9, influence:10, currage:9, drugtolerance:8, workmoral:10, alcoholtolerant:10}},
+{ tileid: 35, itemid: 122, tileid:103, type:"person",name: "Felix Reinfeldt", img: "persons/1.png", smallimg: "persons/1head.png", quote: "privatisera arbetsförmedlingen.", color: "", persontype: "adeln", dailycost: 10, attributes: {strenght:10,mobility:5,intelligence:1,leadership:1, weaponhandling:4, influence:1, currage:10, drugtolerance:4, workmoral:2, alcoholtolerant:2} }
 ]

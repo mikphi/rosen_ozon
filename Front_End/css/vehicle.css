@@ -10,12 +10,12 @@
     margin-left:0px;
     z-index:1000;
     padding:4px;
-    border:1px dashed red;
+    border:0px dashed red;
 }
 
 .vehicle-content:hover {
-   background-color: rgba(244,158,32,0.87);   
-   /*border-radius:40px;  
+   background-color: rgba(244,158,32,0.87);
+   /*border-radius:40px;
    padding:10px;
    margin-left:-12px;
    margin-top:-12px;
@@ -30,8 +30,8 @@
    cursor:pointer;
 }
 
-.vehicle-menu {      
-    
+.vehicle-menu {
+
    display:none;
 }
 
@@ -57,24 +57,24 @@
 {
     width:150px;
     margin: 15px 0px 10px 10px;
-    font-size:11pt;   
+    font-size:11pt;
     }
 
-    
+
 .vehicle-seat
 {
     width:100%;
 
     }
 
- 
+
 
 .vehicle-seat:nth-child(even)
 {
     background-color:rgba(0,0,0,0.1);
     }
-    
-    
+
+
 .vehicle-passenger
 {
     line-height:23px;
@@ -89,7 +89,7 @@
   padding-right:5px;
     }
 
-    
+
 .vehicle-img
 {
     width:24px;
@@ -98,13 +98,13 @@
     float:left;
     margin-right:6px;
     }
-    
+
  .vehicle-menu
  {
      background-image: url('../images/menus/vehicle_bg.png');
      color:Black;
      }
-     
+
  .vehicle-menu a
  {
      color:#444341;

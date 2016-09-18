@@ -15,6 +15,7 @@
     <script src="JS/libs/jquery-3.0.0.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="JS/libs/underscore-min.js"></script>
     <script type="text/javascript" src="JS/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="JS/libs/progressbar-min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,600,600italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -74,10 +75,34 @@
             <div id="menu-uoffice-unemployed-list"></div>
         </div>
 
+        <div id="menu-vehiclestore" class="dialog draggable">
+            <div class="menu-top">
+                <a href="#" class="menu-close menu-generic-close">X</a>
+                <h4>Big Dealys bilar o sånt</h4>
+            </div>
+            <h2>fuck off, jag bestämmer! </h2>
+
+            <p>Våra öppetider : <span id="vehiclestoreopeninghours"></span></p>
+            <div id="menu-vehiclestore-focus">
+                <div class="grid-big" id="menu-vehiclestore-focus-text">
+                    Hetast just nu:
+                    <h2 id="menu-vehiclestore-name"></h2>
+
+                </div>
+                <div class="grid-small">
+                    <img id="menu-vehiclestore-focus-img"/>
+                    <button id="buyvehicle">Köp!</button>
+                </div>
+            </div>
+            <div id="menu-vehiclestore-list"></div>
+        </div>
+
         <div id="menu-player" class="dialog">
             <div class="menu-top">
                 <h3 id="player-name"></h3>
+
             </div>
+                <p id="player-money"></p>
         </div>
 
         <div id="menu-persons" class="dialog">
@@ -111,13 +136,16 @@
     <script type="text/javascript" src="JS/Map.js"></script>
     <script type="text/javascript" src="JS/temptiles.js"></script>
     <script type="text/javascript" src="JS/Player.js"></script>
+      <script type="text/javascript" src="JS/UOffice.js"></script>
+          <script type="text/javascript" src="JS/VehicleStore.js"></script>
     <script type="text/javascript" src="JS/Tile.js"></script>
     <script type="text/javascript" src="JS/List.js"></script>
     <script type="text/javascript" src="JS/Menus.js"></script>
     <script type="text/javascript" src="JS/Person.js"></script>
     <script type="text/javascript" src="JS/Vehicle.js"></script>
     <script type="text/javascript" src="JS/Item.js"></script>
-    <script type="text/javascript" src="JS/UOffice.js"></script>
+
+
 
 </body>
 </html>

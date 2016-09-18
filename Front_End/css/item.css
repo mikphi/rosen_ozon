@@ -1,7 +1,7 @@
-﻿#menu-item {  
+﻿#menu-item {
    z-index:10000;
    height:auto;
-   
+
 }
 
 .item-name {
@@ -14,4 +14,8 @@
 .left-content
 {
     float:left;
+    border:0px solid green;
+    width:200px;
+    position:relative;
+  
     }

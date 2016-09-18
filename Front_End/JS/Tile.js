@@ -1,7 +1,7 @@
 var Tile = {
 
     init: function (tile,top,left,tileid)
-    {        
+    {
         return this.functions.rendertile(tile,top,left,tileid)
     }
 };
@@ -13,8 +13,8 @@ Tile.functions = {
         var html = "<div class='tile' style='top:"+top+"; left:"+left+"' id='tile"+tileid+"' onmouseup='Tile.functions.displayTileInfo(this,event)'><img src='images/tiles/tile_" + tile.tileno + "/tile_" + tile.tileno + "_base.png' />";
 
         var walls = Tile.housewalls.renderwalls(tile.tileno);
-        
-        if (tile.ownership != "") {           
+
+        if (tile.ownership != "") {
             html += walls.replace(/frontcolor/g, tile.ownership).replace(/backcolor/g, this.ColorLuminance(tile.ownership, -0.3)).replace(/nodisplay/g, '').replace(/Layer_1/g, "wallno" + tile.tileid);
         }
         else
@@ -23,7 +23,7 @@ Tile.functions = {
         }
 
 
-        html += "<img src='images/tiles/tile_" + tile.tileno + "/tile_" + tile.tileno + "_windows.png' />";           
+        html += "<img src='images/tiles/tile_" + tile.tileno + "/tile_" + tile.tileno + "_windows.png' />";
         html += Tile.highlight.renderhighlights(tile.tileno, tileid);
         html += "<img src='images/tiles/tile_" + tile.tileno + "/tile_" + tile.tileno + "_windows_night.png' class='tile-windows-night' style='display:" + Betongen.daySettings.displaywindows + "'/>";
         html += Tile.actionmarker.renderactionmarkers(tile.tileno, tileid);
@@ -41,7 +41,7 @@ Tile.functions = {
         $(".tile-marker").hide();
 
         if (mouseX == Map.mouseCoordinateX && mouseY == Map.mouseCoordinateY) {
-            
+
             if (!Map.markerActivated && !Map.isItemClicked) {
 
                 var mapPositionX = $("#map").css("left");
@@ -86,7 +86,7 @@ Tile.functions = {
                                 display: "block",
                                 top: parseInt(tilediv.css("top")) - 250,
                                 left: parseInt(tilediv.css("left")) - 150
-                                
+
 
                             });
 
@@ -94,7 +94,7 @@ Tile.functions = {
 
                             $("#menu-tile-picture").attr("src","images/tiles/tile_" + completetile.tileno + "/tile_" + completetile.tileno + "_base.png");
 
-                            //gubbar p� tilen ska in h�r
+                            //gubbar p� tilen ska in h�r
 
                             switch (completetile.tiletype)
                             {
@@ -111,7 +111,7 @@ Tile.functions = {
 
 
 
-                
+
 
             }
         }
@@ -128,7 +128,7 @@ Tile.functions = {
         $("#wallno" + tile.tileid).show();
     },
 
-   
+
 
     ColorLuminance: function(hex, lum) {
 
@@ -151,6 +151,11 @@ Tile.functions = {
     }
 
 };
+
+Tile.constants = {
+  SPECIAL_TILE_LINKS: {uoffice: {linktext:"Gå in på arbetsförmedlingen", linkfunction:UOffice.functions.renderUOffice }, vehiclestore: {linktext:"Gå in i affären", linkfunction:VehicleStore.init}}
+
+}
 
 Tile.housewalls = {
     renderwalls: function (tileno)

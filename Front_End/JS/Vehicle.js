@@ -102,8 +102,13 @@ Vehicle.functions = {
 }
 
 
-
 Vehicle.constants = {
 
+    TRANSLATION: {
+      car:"bil",
+      bike:"cykel",
+      moped:"moped"
+
+      }
 
 }

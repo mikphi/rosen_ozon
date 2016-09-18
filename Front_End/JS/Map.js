@@ -16,13 +16,16 @@ var Map = {
         this.mapId = mapid;
         this.tiles = this.functions.fetchTiles(this.mapId);
         this.items = this.functions.fetchItems(this.mapId);
+        //tempfunction to add attributes
+        tempfunctions.addAttribute(this.items);
+
         this.coordinateSystem = new Array();
         this.functions.renderMap(this.tiles);
         this.functions.renderItems(this.items);
         this.functions.initCoordinateSystem();
         this.functions.getCoordinateOfMouseClick();
-       
-        
+
+
     }
 };
 
@@ -56,31 +59,31 @@ Map.functions = {
             Map.coordinateSystem.push({ tileid: i, top: top, left: left });
 
             if (tile.x == Map.constants.MAX_NUMBER_OF_TILES_IN_ROW) {
-                
+
                 top = Map.constants.STARTING_TOP_POSITION + Map.constants.ROW_HEIGHT * y;
                 left = Map.constants.STARTING_LEFT_POSITION - Map.constants.HALF_WIDTH_OF_TILE * y;
                 y++;
-                
+
             }
             else {
                 top += Map.constants.ROW_HEIGHT;
                 left += Map.constants.HALF_WIDTH_OF_TILE;
             }
-        }      
+        }
 
         this.adjustMapLayout();
     },
 
     renderItems: function (items) {
 
-        for (var i = 0; i < items.length; i++) {      
-                Item.functions.renderItem(items[i]);        
+        for (var i = 0; i < items.length; i++) {
+                Item.functions.renderItem(items[i]);
         }
     },
 
     adjustMapLayout: function () {
-            
-        var mapSettings = Betongen.daySettings;    
+
+        var mapSettings = Betongen.daySettings;
         $(".tile-highlight").css("opacity", mapSettings.tilehighlightopacity);
         $("#sky").css("background-color", mapSettings.sky);
         $("#land").css("background-color", mapSettings.land);
@@ -155,7 +158,7 @@ Map.functions = {
 
             Map.mouseCoordinateX = e.pageX;
             Map.mouseCoordinateY = e.pageY;
-        
+
         });
 
     },
@@ -169,10 +172,10 @@ Map.functions = {
         {
             var top = Math.floor((Math.random() * 800) + 1);
             $("#map").append("<img src='images/"+img+"' class='clouds' width='140' style='top:"+top+";left:"+left+"'>");
-            if (i % 2 == 0) {  left += 200; }                     
+            if (i % 2 == 0) {  left += 200; }
         }
     },
-   
+
     generatetiles: function ()
     {
         var tiles = [];
@@ -193,7 +196,20 @@ Map.functions = {
                 ownership = "#FF0000";
             }
 
-            
+            if (x == 1 && y == 1)
+            {
+                tiletype = "hq";
+                ownership = "#000000";
+            }
+
+
+            if (x == 8 && y == 7)
+            {
+                tiletype = "vehiclestore";
+                ownership = "#AA55EE";
+            }
+
+
             var tile = { tiletype: tiletype, tileno: tileno, ownership: ownership, energytogethere: 0, x: x, y: y, tileid: i }
             tiles.push(tile);
         }
@@ -215,6 +231,3 @@ Map.constants = {
     WIDTH_OF_TILE: 240,
     NUMBER_OF_TILETYPES: 6
 }
-
-
-

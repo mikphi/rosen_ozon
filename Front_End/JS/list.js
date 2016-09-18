@@ -49,8 +49,8 @@ function List(items,propertiestorender,options,columns) {
 
                 $propdiv.css({"width": columnSetting.width, "line-height": options.imgheight});
 
-                if (!prop.toString().match(/png/g)) {
-                    $propdiv.text(prop);
+                if (!prop.toString().match(/\.(jpe?g|png|gif|bmp)$/i)) {
+                    $propdiv.text(prop + " " + (columnSetting.unit != undefined ? columnSetting.unit : ""));
                 }
                 else {
                     $img = $("<img>");

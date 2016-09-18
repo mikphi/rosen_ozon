@@ -201,7 +201,7 @@ Item.constants = {
         CSS_CLASS: "person-content",
         LEFT_STARTING_POSITION: 40,
         TOP_MARGIN: "15px",
-        WIDTH:"200px",
+        WIDTH:"400px",
 
     }
 }

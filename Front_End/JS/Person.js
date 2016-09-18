@@ -13,7 +13,21 @@ Person.functions = {
 
         $personMenu = $("#item-specific-content");
 
-        $(".left-content").append(this.renderHorizontalBar(person.energy, 10, 100));
+        var attrkeys = Object.keys(person.attributes);
+
+        for(var i = 0; i < attrkeys.length; i++)
+        {
+
+            $div = $("<div>");
+            $div.css({"height":"30px"},{"padding-bottom":"5px"});
+            $div.addClass("attrprogressbar" + i);
+            $div.css("position","relative");
+            $(".left-content").append($div);
+
+            Person.functions.renderProgressBar(person.attributes[attrkeys[i]],".attrprogressbar" + i, Person.constants.TRANSLATION[attrkeys[i]]);
+
+        }
+
         $a = $("<a>");
         $a.on("click", function () { Item.functions.openMoveOptions() });
         $a.text("Flytta");
@@ -29,16 +43,22 @@ Person.functions = {
 
         if (tile.tiletype != "normal")
         {
-            switch (tile.tiletype)
-            {
-                case "uoffice":
-                    $a = $("<a>");
-                    $a.on("click", function () { UOffice.functions.renderUOffice(); });
-                    $a.text(" Gå in på arbetsförmedlingen");
-                    $personMenu.append($a);
-
-                    break;
-            }
+             //alert(Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linktext);
+             $a = $("<a>");
+             $a.on("click", function () { Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linkfunction() });
+             $a.text(Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linktext);
+             $personMenu.append($a);
+            // switch (tile.tiletype)
+            // {
+            //     case "uoffice":
+            //         $a = $("<a>");
+            //         $a.on("click", function () { UOffice.functions.renderUOffice(); });
+            //         $a.text(" Gå in på arbetsförmedlingen");
+            //         $personMenu.append($a);
+            //         break;
+            //
+            //
+            // }
         }
 
         $personMenu.append(this.renderEnterCarOptions(person));
@@ -62,6 +82,41 @@ Person.functions = {
         if (value < 30) { backgroundColor = Item.constants.ENERGY_LOW; }
 
         return "<div class='horizontal-bar' style='height:" + height + "px; width:" + width + "'><div style='width:" + (101 - value) + "%'></div><div class='horizontal-bar-level' style='width:" + value + "%;background-color:" + backgroundColor + ";'></div></div>";
+
+    },
+
+    renderProgressBar: function(value,container,attribute)
+    {
+
+
+      var bar = new ProgressBar.Line(container, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        trailColor: '#898989',
+        trailWidth: 4,
+        from: {color: '#d11919'},
+        to: {color: '#a0ea6b'},
+        svgStyle: {width: '90%'},
+        text: {
+          style: {
+            color: '#3f3d3d',
+            position: 'absolute',
+            right: '10px',
+            top: '7px',
+            padding: 5,
+            margin: 0,
+            transform: null
+          },
+          autoStyleContainer: false
+        },
+        step: (state, bar) => {
+          bar.setText(attribute + ": " + Math.round(bar.value()*10));
+          bar.path.setAttribute('stroke', state.color);
+        }
+      });
+
+      bar.animate(value/10);
 
     },
 
@@ -111,5 +166,23 @@ Person.functions = {
 
     }
 
+
+}
+
+
+Person.constants = {
+
+    TRANSLATION: {
+      strength:"styrka",
+      mobility:"rörlighet",
+      intelligence:"intelligens",
+      leadership:"ledarskap",
+      weaponhandling:"vapenfärdighet",
+      influence:"inflytande",
+      currage:"mod",
+      drugtolerance:"knarktålig",
+      workmoral:"arbetsmoral",
+      alcoholtolerant:"alkoholtålig"
+      }
 
 }

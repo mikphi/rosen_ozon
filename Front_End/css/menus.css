@@ -1,6 +1,6 @@
 ﻿.dialog {
     background-color: #787878;
-    font-family: 'Josefin Sans', sans-serif;
+  /*  font-family: 'Josefin Sans', sans-serif;*/
     font-weight:600;
     border-radius:3px;
     color:white;
@@ -184,15 +184,15 @@
 }
 
 #menu-uoffice {
-    width:500px;
-    height:500px;
+    width:700px;
+    height:700px;
     z-index:10000;
     position:absolute;
     display:none;
     left:50%;
-    top: 200px;
-    margin-left:-250px;
-    background-color:#ECEBEB;
+    top: 100px;
+    margin-left:-350px;
+    background-color:white;
     color:#006999;
 }
 
@@ -229,4 +229,18 @@ width:42px;
 
 #menu-uoffice-unemployed-list {
     margin:10px;
+}
+
+
+#menu-vehiclestore {
+    width:700px;
+    height:700px;
+    z-index:10000;
+    position:absolute;
+    display:none;
+    left:50%;
+    top: 100px;
+    margin-left:-350px;
+    background-color:#FF9900;
+    color:black;
 }
