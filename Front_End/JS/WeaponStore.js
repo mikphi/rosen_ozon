@@ -56,9 +56,9 @@ WeaponStore.functions = {
           Player.weapons.push(weapon);
 
           Player.functions.renderPlayerInfo()
-          //Item.functions.renderItem(vehicle, false)
+          Item.functions.openItemMenu(Map.itemActive);
           WeaponStore.avalibleWeapons = _.reject(WeaponStore.avalibleWeapons, weapon)
-          //UOffice.personinfocus = null;
+          
           this.renderWeaponStore();
         }
       },
