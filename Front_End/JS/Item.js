@@ -58,7 +58,7 @@ Item.functions = {
             case "person":
                 return Item.constants.PERSON_CONSTANTS;
                 break;
-            case "car":
+            case "vehicle":
                 return Item.constants.VEHICLE_CONSTANTS;
                 break;
         }
@@ -74,7 +74,7 @@ Item.functions = {
 
         item.energy >= constants.ENERGY_TO_MOVE_ONE_TILE ? $("#item-make-move").show() : $("#item-make-move").hide();
         //gemensamt
-        $(".left-content").empty();
+        $(".right-content").empty();
         $menu = $("#menu-item");
         $menu.css({
             display: "block",
@@ -95,7 +95,7 @@ Item.functions = {
             case "person":
                 Person.functions.renderMenu($menu, item);
                 break;
-            case "car":
+            case "vehicle":
                 Vehicle.functions.renderMenu($menu, item);
                 break;
         }
@@ -193,7 +193,7 @@ Item.constants = {
         CSS_CLASS: "vehicle-content",
         LEFT_STARTING_POSITION: 50,
         TOP_MARGIN: "-6px",
-        WIDTH: "300px",
+        WIDTH: "400px",
 
     },
     PERSON_CONSTANTS: {

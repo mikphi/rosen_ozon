@@ -2,9 +2,9 @@ function List(items,propertiestorender,options,columns) {
     var defaultValues = { islinkable: false, appendelement: "", linkfunction: null,displayheader:true,
      oddcolor: '#333', evencolor: '#BBB', imgheight: '20px', imgwidth:'20px'  }
     var options = setOptions(options, defaultValues)
-    console.log(options)
     var columns = columns
     var propertiesToRender = propertiestorender
+
 
     //setOptions(options);
     renderList(items);
@@ -31,9 +31,11 @@ function List(items,propertiestorender,options,columns) {
         $.each(items, function (index, item) {
             $div = $("<div>");
             $div.addClass("list-row");
+            console.log(item);
             $div.css("background-color", index % 2 ? options.oddcolor : options.evencolor)
             if (options.islinkable)
             {
+                $div.css("cursor","pointer");
                 $div.on("click", function () {
                     //alert(item[this.options.linkproperty]);
                     options.linkfunction(item);
@@ -43,7 +45,9 @@ function List(items,propertiestorender,options,columns) {
 
             for (var i = 0; i < list.length; i++)
             {
+                  console.log(list[i]);
                 var prop = item[list[i]];
+                console.log(prop);
                 var columnSetting = columns[i];
                 $propdiv = $("<div>");
 

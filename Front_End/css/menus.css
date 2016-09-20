@@ -11,7 +11,8 @@
     font-size:9pt;
     border:2px solid #1f1f1f; /*#1e1e1e;*/
     /*box-shadow: 1px 1px 1px #000000;*/
-    /*background-image: url('../images/menus/menu_bg.png');*/
+    background-image: url('../images/menus/menu_bg.png');
+    background-size:cover;
 
 
 }
@@ -39,6 +40,7 @@
     text-decoration:none;
     font-weight:700;
     cursor:pointer;
+
 
 }
 
@@ -91,7 +93,7 @@
 #menu-player {
     width:300px;
     height:200px;
-    left:100px;
+    right:10px;
     display:block;
     top:10px;
 
@@ -103,7 +105,7 @@
 
     display:block;
     top:220px;
-    left:100px;
+    right:10px;
 }
 
 #menu-persons p {
@@ -132,7 +134,7 @@
      width:300px;
     display:block;
     top:430px;
-    left:100px;
+    right:10px;
 }
 
 #menu-vehicles p {
@@ -187,6 +189,7 @@
     width:700px;
     height:700px;
     z-index:10000;
+    background:none;
     position:absolute;
     display:none;
     left:50%;
@@ -234,13 +237,26 @@ width:42px;
 
 #menu-vehiclestore {
     width:700px;
-    height:700px;
     z-index:10000;
     position:absolute;
     display:none;
     left:50%;
     top: 100px;
     margin-left:-350px;
+    background:none;
     background-color:#FF9900;
+    color:black;
+}
+
+#menu-weaponstore {
+    width:700px;
+    z-index:10000;
+    position:absolute;
+    display:none;
+    left:50%;
+    top: 100px;
+    margin-left:-350px;
+    background:none;
+    background-color:#467c45;
     color:black;
 }

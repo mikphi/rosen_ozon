@@ -2,7 +2,7 @@
     margin:0px;
     padding:0px;
     overflow:hidden;
-   font-family:  "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+   font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif; /* "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;*/
 }
 
 #content {

@@ -86,7 +86,7 @@ Vehicle.functions = {
     },
 
     renderFuelLevel: function (vehicle) {
-        $(".left-content").append("<div class='vehicle-fuel'><img src='images/fueltank.png'><br />" + vehicle.energy + " liter<div> ( " + (vehicle.fueltank - vehicle.energy) + " ltr till full tank)</div></div>");
+        $(".right-content").append("<div class='vehicle-fuel'><img src='images/fueltank.png'><br />" + vehicle.energy + " liter<div> ( " + (vehicle.fueltank - vehicle.energy) + " ltr till full tank)</div></div>");
     },
 
     changeTileIdOnPassengers: function (passengers,tileid) {

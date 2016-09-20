@@ -13,20 +13,23 @@ Person.functions = {
 
         $personMenu = $("#item-specific-content");
 
+        //render person attributes
         var attrkeys = Object.keys(person.attributes);
 
         for(var i = 0; i < attrkeys.length; i++)
         {
-
             $div = $("<div>");
             $div.css({"height":"30px"},{"padding-bottom":"5px"});
             $div.addClass("attrprogressbar" + i);
             $div.css("position","relative");
-            $(".left-content").append($div);
+            $(".right-content").append($div);
 
             Person.functions.renderProgressBar(person.attributes[attrkeys[i]],".attrprogressbar" + i, Person.constants.TRANSLATION[attrkeys[i]]);
 
         }
+
+
+
 
         $a = $("<a>");
         $a.on("click", function () { Item.functions.openMoveOptions() });
@@ -43,25 +46,51 @@ Person.functions = {
 
         if (tile.tiletype != "normal")
         {
-             //alert(Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linktext);
+
              $a = $("<a>");
              $a.on("click", function () { Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linkfunction() });
              $a.text(Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linktext);
              $personMenu.append($a);
-            // switch (tile.tiletype)
-            // {
-            //     case "uoffice":
-            //         $a = $("<a>");
-            //         $a.on("click", function () { UOffice.functions.renderUOffice(); });
-            //         $a.text(" Gå in på arbetsförmedlingen");
-            //         $personMenu.append($a);
-            //         break;
-            //
-            //
-            // }
+
         }
 
+
+
         $personMenu.append(this.renderEnterCarOptions(person));
+
+        $div = $("<div>");
+        $div.addClass("person-weapons");
+        $personMenu.append($div);
+
+
+        var weapons = _.filter(Player.weapons, function (weapon) {
+            return weapon.personid == person.itemid;
+        });
+
+        if(weapons != undefined)
+        {
+          var options = { islinkable: true,
+                displayheader: true,
+                appendelement: ".person-weapons",
+                linkfunction: WeaponStore.functions.renderFocusWeapon,
+              oddcolor:"#353333",
+              evencolor:"#232222",
+                imgheight: '23px',
+                imgwidth:'23px' };
+
+          var propertiestorender = ["img","name"];
+          var columns = [
+              { name: "", width: "20%" },
+              { name: "", width: "50%" },
+
+
+          ];
+
+          console.log(weapons);
+          var list = new List(weapons, propertiestorender, options,columns);
+        }
+
+
 
     },
 
@@ -93,14 +122,14 @@ Person.functions = {
         strokeWidth: 4,
         easing: 'easeInOut',
         duration: 1400,
-        trailColor: '#898989',
+        trailColor: '#4f4949',
         trailWidth: 4,
         from: {color: '#d11919'},
         to: {color: '#a0ea6b'},
         svgStyle: {width: '90%'},
         text: {
           style: {
-            color: '#3f3d3d',
+            color: '#cecccc',
             position: 'absolute',
             right: '10px',
             top: '7px',
@@ -122,7 +151,7 @@ Person.functions = {
 
     renderEnterCarOptions: function (person) {
 
-        var vehicles = _.filter(Map.items, function (item) { return item.tileid == person.tileid && item.type == "car" && item.passengers.length < item.seats; });
+        var vehicles = _.filter(Map.items, function (item) { return item.tileid == person.tileid && item.type == "vehicle" && item.passengers.length < item.seats; });
 
         if (vehicles.length == 0)
             return

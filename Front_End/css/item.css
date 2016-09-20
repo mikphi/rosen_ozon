@@ -11,11 +11,17 @@
 }
 
 
-.left-content
+.right-content
 {
-    float:left;
+    float:right;
     border:0px solid green;
     width:200px;
     position:relative;
-  
+
     }
+
+#item-specific-content a
+{
+  width:100%;
+
+}

@@ -9,7 +9,7 @@
            VehicleStore.functions.buyVehicle(VehicleStore.vehicleinfocus)
          })
         VehicleStore.avalibleVehicles = VehicleStore.Tempcars;
-        VehicleStore.functions.renderVehicleStore();
+
     }
 }
 
@@ -19,7 +19,7 @@ VehicleStore.functions = {
 
         var vehicles = VehicleStore.avalibleVehicles;
         $.each(vehicles, function(index,vehicle) {
-          vehicle.translation = Vehicle.constants.TRANSLATION[vehicle.type];
+          vehicle.translation = Vehicle.constants.TRANSLATION[vehicle.vehicletype];
         });
 
          VehicleStore.functions.renderFocusVehicle(vehicles[0]);
@@ -28,7 +28,7 @@ VehicleStore.functions = {
           var options = { islinkable: true,
                 displayheader: true,
                 appendelement: "#menu-vehiclestore-list",
-                linkfunction: this.renderFocusVehicle,
+                linkfunction: VehicleStore.functions.renderFocusVehicle,
                 oddcolor:"#fccf2d",
                 evencolor:"#fcac5d",
                 imgheight: '35px',
@@ -88,7 +88,14 @@ VehicleStore.constants = {
 
 
 VehicleStore.Tempcars = [
-    { tileid: 91, name: "Volvo 244 DL", img: "vehicles/volvo244dl.gif", color: "", energy: 40, playerid: 0, itemid: 6022, mapid: 10, type: "car", seats: 5, passengers: [], fueltank: 60, value: 300  },
-   { tileid: 91, name: "Hooky Oldschool DL", img: "vehicles/hookyoldschooldl.gif", color: "", energy: 40, playerid: 0, itemid: 8022, mapid: 10, type: "car", seats:3, passengers: [], fueltank: 60,value: 150   },
-   { tileid: 91, name: "Java Kombi", img: "vehicles/javakombi.gif", color: "", energy: 40, playerid: 0, itemid: 602, mapid: 10, type: "car", seats: 2, passengers: [], fueltank: 60,value: 40   },
-          ]
+    { tileid: 91, name: "Volvo 244 DL", img: "vehicles/volvo244dl.gif", color: "", energy: 40, playerid: 0, itemid: 6022, mapid: 10, type: "vehicle", vehicletype:"car", seats: 5, passengers: [], fueltank: 40, value: 300  },
+   { tileid: 91, name: "Hooky Oldschool DL", img: "vehicles/hookyoldschooldl.gif", color: "", energy:20, playerid: 0, itemid: 8022, mapid: 10, type: "vehicle",vehicletype:"moped", seats:3, passengers: [], fueltank: 20,value: 150   },
+   { tileid: 91, name: "Java Kombi", img: "vehicles/javakombi.gif", color: "", energy: 10, playerid: 0, itemid: 602, mapid: 10, type: "vehicle",vehicletype:"moped", seats: 2, passengers: [], fueltank: 10,value: 40   },
+   { tileid: 91, name: "Java Kombi", img: "vehicles/javakombi.gif", color: "", energy: 10, playerid: 0, itemid: 8902, mapid: 10, type: "vehicle",vehicletype:"moped", seats: 2, passengers: [], fueltank: 10,value: 40   },
+   { tileid: 91, name: "Bullfix 2000", img: "vehicles/bullfix2000.gif", color: "", energy: 40, playerid: 0, itemid: 68682, mapid: 10, type: "vehicle",vehicletype:"car", seats: 5, passengers: [], fueltank: 40,value: 300   },
+   { tileid: 91, name: "Volvo PV dl", img: "vehicles/volvopwdl.gif", color: "", energy: 43, playerid: 0, itemid: 1231202, mapid: 10, type: "vehicle",vehicletype:"car", seats: 6, passengers: [], fueltank: 43,value: 95   },
+   { tileid: 91, name: "Caddylick 160 se", img: "vehicles/caddylick160se.gif", color: "", energy: 55, playerid: 0, itemid: 234202, mapid: 10, type: "vehicle",vehicletype:"car", seats: 6, passengers: [], fueltank: 55,value: 140   },
+   { tileid: 91, name: "Discolight GL Combi", img: "vehicles/discolightglcombi.gif", color: "", energy: 40, playerid: 0, itemid: 6572, mapid: 10, type: "vehicle",vehicletype:"car", seats: 4, passengers: [], fueltank: 60,value: 199   },
+   { tileid: 91, name: "Presidential car 63 edt", img: "vehicles/presidentialcar63edt.gif", color: "", energy: 70, playerid: 0, itemid: 572, mapid: 10, type: "vehicle",vehicletype:"car", seats: 8, passengers: [], fueltank: 70,value: 199   },
+   { tileid: 91, name: "Presidential car 63 edt", img: "vehicles/presidentialcar63edt.gif", color: "", energy: 70, playerid: 0, itemid: 573, mapid: 10, type: "vehicle",vehicletype:"car", seats: 8, passengers: [], fueltank: 70,value: 199   },
+        ]

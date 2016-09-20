@@ -210,6 +210,13 @@ Map.functions = {
             }
 
 
+            if (x == 7 && y == 8)
+            {
+                tiletype = "weaponstore";
+                ownership = "#BB44CC";
+            }
+
+
             var tile = { tiletype: tiletype, tileno: tileno, ownership: ownership, energytogethere: 0, x: x, y: y, tileid: i }
             tiles.push(tile);
         }
