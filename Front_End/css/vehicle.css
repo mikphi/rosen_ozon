@@ -55,11 +55,16 @@
 
 .vehicle-seats-content
 {
-    width:150px;
+    width:90%;
     margin: 15px 0px 10px 10px;
     font-size:11pt;
     }
 
+#item-specific-content a
+{
+  width:auto;
+
+}
 
 .vehicle-seat
 {
@@ -81,6 +86,7 @@
     text-align:left;
     font-size:9pt;
         padding:2px;
+        overflow:auto;
     }
 
 .vehicle-passenger a
@@ -92,11 +98,13 @@
 
 .vehicle-img
 {
-    width:24px;
+
     height:20px;
     background-size: 24px;
     float:left;
     margin-right:6px;
+    padding-left:30px;
+    background-repeat: no-repeat;
     }
 
  .vehicle-menu

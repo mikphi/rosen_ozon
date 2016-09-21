@@ -16,13 +16,17 @@ Person.functions = {
         //render person attributes
         var attrkeys = Object.keys(person.attributes);
 
+        $attributesdiv = $("<div>");
+        $attributesdiv.addClass("person-attributes-div");
+        $(".right-content").append($attributesdiv);
+
         for(var i = 0; i < attrkeys.length; i++)
         {
             $div = $("<div>");
             $div.css({"height":"30px"},{"padding-bottom":"5px"});
             $div.addClass("attrprogressbar" + i);
             $div.css("position","relative");
-            $(".right-content").append($div);
+            $(".person-attributes-div").append($div);
 
             Person.functions.renderProgressBar(person.attributes[attrkeys[i]],".attrprogressbar" + i, Person.constants.TRANSLATION[attrkeys[i]]);
 
@@ -70,9 +74,9 @@ Person.functions = {
         if(weapons != undefined)
         {
           var options = { islinkable: true,
-                displayheader: true,
+                displayheader: false,
                 appendelement: ".person-weapons",
-                linkfunction: WeaponStore.functions.renderFocusWeapon,
+                linkfunction: Weapon.functions.displaySelectedWeapon,
               oddcolor:"#353333",
               evencolor:"#232222",
                 imgheight: '23px',
@@ -82,13 +86,18 @@ Person.functions = {
           var columns = [
               { name: "", width: "20%" },
               { name: "", width: "50%" },
-
-
           ];
 
-          console.log(weapons);
           var list = new List(weapons, propertiestorender, options,columns);
+
+
+          //renderFocusWeapon
+          $(".right-content").append("<div class='person-weapon-highlight'></div>");
+
         }
+
+
+
 
 
 

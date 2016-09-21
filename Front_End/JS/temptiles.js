@@ -53,7 +53,7 @@ tempfunctions = {
 
 var TEMPWEAPONS = [
     { name: "Påk i trä", img: "weapons/1.gif", playerid: 1, weaponid: 321685822, personid:1056, type: "bat", value: 300  },
-    { name: "Turtles trådar", img: "weapons/2.gif", playerid: 1, weaponid: 675896022, personid:1056, type: "bat", value: 300  },
+    { name: "Turtles trådar", img: "weapons/2.gif", playerid: 1, weaponid: 675896022, personid:1010, type: "bat", value: 300  },
     { name: "Yxfix med fjärrkontroll", img: "weapons/5.gif", playerid: 10, weaponid: 477837022, personid:1006, type: "axe", value: 300  },
     { name: "Maxad TNT (170km/tim)", img: "weapons/6.gif", playerid: 10, weaponid: 34008022, personid:1004, type: "bomb", value: 300  }
         ]

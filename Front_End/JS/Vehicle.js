@@ -41,9 +41,9 @@ Vehicle.functions = {
 
                     $passengerImg = $("<div>");
                     $passengerImg.addClass("vehicle-img");
+                    $passengerImg.text(passengerObject.name);
                     $passengerImg.css("background-image", "url('images/" + passengerObject.img + "')");
                     $passenger.append($passengerImg);
-                    $passenger.append(passengerObject.name);
                     $a = $("<a>");
                     $a.on("click", function () {
                         passengerObject.invehicle = false;
@@ -54,6 +54,8 @@ Vehicle.functions = {
                     });
                     $a.text(" kliv ur");
                     $passenger.append($a);
+                    //$passenger.append(passengerObject.name);
+
                     $seat.append($passenger);
 
                 }
