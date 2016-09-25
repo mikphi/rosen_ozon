@@ -246,7 +246,17 @@ width:42px;
     background:none;
     background-color:#FF9900;
     color:black;
+      background-image: url('../images/menus/vehicle_bg.png');
+      background-size:cover;
 }
+
+#menu-vehiclestore-list
+{
+  padding:10px;
+  font-size:11pt;
+}
+
+
 
 #menu-weaponstore {
     width:700px;
@@ -259,4 +269,25 @@ width:42px;
     background:none;
     background-color:#467c45;
     color:black;
+}
+
+#menu-gasstation
+{
+  width:700px;
+  z-index:10000;
+  position:absolute;
+  display:none;
+  left:50%;
+  top: 100px;
+  margin-left:-350px;
+  background:none;
+  background-color:#f9e2a7;
+  color:black;
+  font-size:11pt;
+
+}
+
+#gasstation-gas-content
+{
+  padding:10px;
 }

@@ -17,6 +17,20 @@ Vehicle.functions = {
         $a.text("Flytta");
         $html.append($a);
 
+        var tile = _.findWhere(Map.tiles, { tileid:vehicle.tileid });
+
+        if(tile.tiletype == "gasstation")
+        {
+          console.log("h");
+          $a = $("<a>");
+          $a.on("click", function()
+          {
+            GasStation.functions.renderGasStation();
+          });
+          $a.text(" Slajda upp vid Jiffys pump");
+
+          $html.append($a);
+        }
 
     },
 
@@ -88,7 +102,7 @@ Vehicle.functions = {
     },
 
     renderFuelLevel: function (vehicle) {
-        $(".right-content").append("<div class='vehicle-fuel'><img src='images/fueltank.png'><br />" + vehicle.energy + " liter<div> ( " + (vehicle.fueltank - vehicle.energy) + " ltr till full tank)</div></div>");
+        $(".right-content").append("<div class='vehicle-fuel'><img src='images/fueltank.png'><br />" + vehicle.energy + " liter<div> ( " + (vehicle.fuelcapacity - vehicle.energy) + " ltr till full tank)</div></div>");
     },
 
     changeTileIdOnPassengers: function (passengers,tileid) {
@@ -107,9 +121,9 @@ Vehicle.functions = {
 Vehicle.constants = {
 
     TRANSLATION: {
-      car:"bil",
-      bike:"cykel",
-      moped:"moped"
+      car:"Bil",
+      bike:"Cykel",
+      moped:"Moped"
 
       }
 

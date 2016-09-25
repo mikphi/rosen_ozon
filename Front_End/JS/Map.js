@@ -216,6 +216,13 @@ Map.functions = {
                 ownership = "#BB44CC";
             }
 
+            if(x==8 && y == 8)
+            {
+                tiletype = "gasstation";
+                ownership = "#22DE21";
+
+            }
+
 
             var tile = { tiletype: tiletype, tileno: tileno, ownership: ownership, energytogethere: 0, x: x, y: y, tileid: i }
             tiles.push(tile);

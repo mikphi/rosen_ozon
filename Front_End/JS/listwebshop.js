@@ -1,4 +1,4 @@
-function List(items,propertiestorender,options,columns) {
+function ListWebShop(items,propertiestorender,options,columns) {
     var defaultValues = { islinkable: false, appendelement: "", linkfunction: null,displayheader:true,
      oddcolor: '#333', evencolor: '#BBB', hovercolor: "#b7b7b7", imgheight: '20px', imgwidth:'20px'  }
     var options = setOptions(options, defaultValues)
