@@ -58,6 +58,10 @@ function List(items,propertiestorender,options,columns) {
 
                 $propdiv.css({"width": columnSetting.width, "line-height": options.imgheight});
 
+                if(columnSetting.css != undefined){
+                      $propdiv.css(columnSetting.css);
+                }
+                
                 if (!prop.toString().match(/\.(jpe?g|png|gif|bmp)$/i)) {
                     $propdiv.text(prop + " " + (columnSetting.unit != undefined ? columnSetting.unit : ""));
                 }

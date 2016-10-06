@@ -2,6 +2,7 @@
 var Player = {
     player: {},
     weapons: [],
+    inventory: [],
 
     init: function ()
     {

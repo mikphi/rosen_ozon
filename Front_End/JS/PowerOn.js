@@ -15,6 +15,7 @@ var Betongen = {
         Menus.init();
         WeaponStore.init();
         VehicleStore.init();
+        GasStation.init();
 
         $(function () {
             $("#map").draggable();

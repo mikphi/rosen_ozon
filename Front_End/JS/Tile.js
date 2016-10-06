@@ -158,7 +158,7 @@ Tile.constants = {
   SPECIAL_TILE_LINKS: { uoffice: {linktext:" Gå in på arbetsförmedlingen", linkfunction:UOffice.functions.renderUOffice },
                         vehiclestore: {linktext:" Besök Big Dealys fina etablissemang", linkfunction:VehicleStore.functions.renderVehicleStore},
                         weaponstore: {linktext:" Entra Willy Johnssons domäner", linkfunction:WeaponStore.functions.renderWeaponStore},
-                        gasstation: {linktext:" Tanka hos Jiffys", linkfunction:GasStation.functions.renderGasStation}
+                        gasstation: {linktext:" Handla hos jiffys", linkfunction:GasStation.functions.renderGasStation}
                       }
 
 }

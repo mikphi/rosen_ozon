@@ -119,7 +119,7 @@ Item.functions = {
 
         var tile = _.findWhere(Map.tiles, { tileid: item.tileid });
 
-        var potentialDistance = item.energy / constants.ENERGY_TO_MOVE_ONE_TILE;
+        var potentialDistance = item.energy / Map.itemActive.energytomove;
 
         Map.markerActivated = true;
         Map.markerUsage = "DisplayMovementDialog";
@@ -130,7 +130,7 @@ Item.functions = {
 
             if (distanceToTile <= potentialDistance) {
                $("#tile" + Map.tiles[i].tileid).children(".tile-action-marker").css("display", "none");
-               Map.tiles[i].energytogethere = distanceToTile * constants.ENERGY_TO_MOVE_ONE_TILE;
+               Map.tiles[i].energytogethere = distanceToTile * Map.itemActive.energytomove;
             }
 
         }

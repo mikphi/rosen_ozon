@@ -58,6 +58,15 @@ Person.functions = {
 
         }
 
+        var inventoryitems = _.filter(Player.inventory, { personid: person.itemid });
+
+        if(inventoryitems != undefined)
+        {
+          //$(".right-content").append("<div class='person-inventory'></div>");
+            //Inventory.functions.displayInventory();
+        }
+
+        console.log(inventoryitems);
 
 
         $personMenu.append(this.renderEnterCarOptions(person));
@@ -91,15 +100,9 @@ Person.functions = {
           var list = new List(weapons, propertiestorender, options,columns);
 
 
-          //renderFocusWeapon
           $(".right-content").append("<div class='person-weapon-highlight'></div>");
 
         }
-
-
-
-
-
 
     },
 
