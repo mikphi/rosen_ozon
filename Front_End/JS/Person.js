@@ -52,16 +52,25 @@ Person.functions = {
         {
 
              $a = $("<a>");
-             $a.on("click", function () { Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linkfunction() });
+             $a.on("click", function () { Shop.init(tile.tileid)});
+             //$a.on("click", function () { Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linkfunction() });
              $a.text(Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linktext);
              $personMenu.append($a);
 
         }
 
+
         var inventoryitems = _.filter(Player.inventory, { personid: person.itemid });
 
-        if(inventoryitems != undefined)
+        if(inventoryitems.length >0)
         {
+          $img = $("<img>");
+          $img.attr("src","images/inventory.png");
+          $img.attr("width","40");
+          $img.on("click",function() {
+            Inventory.functions.displayInventory();
+          });
+          $personMenu.append($img);
           //$(".right-content").append("<div class='person-inventory'></div>");
             //Inventory.functions.displayInventory();
         }

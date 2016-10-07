@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/menus.css">
     <link rel="stylesheet" type="text/css" href="css/item.css">
     <link rel="stylesheet" type="text/css" href="css/grid.css">
+    <link rel="stylesheet" type="text/css" href="css/shop.css">
      <link rel="stylesheet" type="text/css" href="css/vehicle.css">
     <link rel="stylesheet" type="text/css" href="css/list.css">
     <script src="JS/libs/jquery-3.0.0.min.js" type="text/javascript"></script>
@@ -20,7 +21,6 @@
 </head>
 <body>
     <div id="content">
-
 
         <div id="map">
             <div id="sky"></div>
@@ -49,7 +49,37 @@
             </div>
         </div>
 
-        <div id="menu-uoffice" class="dialog draggable">
+        <div class="shop dialog draggable">
+          <div class="menu-top">
+              <a href="#" class="menu-close menu-generic-close">X</a>
+              <h4 class="shop-name"></h4>
+          </div>
+          <div class="grid">
+            <div class="grid-x-small">
+              <img id="shop-owner-pic">
+            </div>
+            <div class="grid-x-big">
+              <h2 class="shop-welcome-text"></h2>
+              <p>Våra öppetider : <span id="shop-openinghours"></span></p>
+            </div>
+          </div>
+          <div id="shop-focus-item">
+            <div id="shop-focus-item-content">
+              <div class="grid-big">
+                  <h2 id="shop-focus-item-name"></h2>
+                  <div id="shop-focus-item-text"></div>
+              </div>
+              <div class="grid-small">
+                  <img id="menu-shop-focus-img"/>
+                  <button id="shop-buy-item">Köp!</button>
+              </div>
+            </div>
+          </div>
+          <div id="shop-item-list"></div>
+
+        </div>
+
+        <!-- <div id="menu-uoffice" class="dialog draggable">
             <div class="menu-top">
                 <a href="#" class="menu-close menu-generic-close">X</a>
                 <h4>Arbetsförmedlingen</h4>
@@ -115,7 +145,6 @@
             <div id="menu-weaponstore-list"></div>
         </div>
 
-
         <div id="menu-gasstation" class="dialog draggable">
             <div class="menu-top">
                 <a href="#" class="menu-close menu-generic-close">X</a>
@@ -145,8 +174,7 @@
             </div>
             <div id="gasstation-shop-content"></div>
 
-        </div>
-
+        </div> -->
 
         <div id="menu-player" class="dialog">
             <div class="menu-top">
@@ -182,6 +210,7 @@
                 <a href="#" id="menu-move-confirmation-no">NEJ</a>
             </div>
         </div>
+
     </div>
     <script type="text/javascript" src="JS/PowerOn.js"></script>
     <script type="text/javascript" src="JS/Map.js"></script>
@@ -191,10 +220,12 @@
     <script type="text/javascript" src="JS/VehicleStore.js"></script>
     <script type="text/javascript" src="JS/WeaponStore.js"></script>
     <script type="text/javascript" src="JS/GasStation.js"></script>
+    <script type="text/javascript" src="JS/Shop.js"></script>
     <script type="text/javascript" src="JS/Tile.js"></script>
     <script type="text/javascript" src="JS/List.js"></script>
     <script type="text/javascript" src="JS/ListWebShop.js"></script>
     <script type="text/javascript" src="JS/Menus.js"></script>
+
     <script type="text/javascript" src="JS/Weapon.js"></script>
     <script type="text/javascript" src="JS/Person.js"></script>
     <script type="text/javascript" src="JS/Vehicle.js"></script>

@@ -130,8 +130,6 @@ Tile.functions = {
         $("#wallno" + tile.tileid).show();
     },
 
-
-
     ColorLuminance: function(hex, lum) {
 
         // validate hex string
@@ -155,10 +153,10 @@ Tile.functions = {
 };
 
 Tile.constants = {
-  SPECIAL_TILE_LINKS: { uoffice: {linktext:" Gå in på arbetsförmedlingen", linkfunction:UOffice.functions.renderUOffice },
-                        vehiclestore: {linktext:" Besök Big Dealys fina etablissemang", linkfunction:VehicleStore.functions.renderVehicleStore},
-                        weaponstore: {linktext:" Entra Willy Johnssons domäner", linkfunction:WeaponStore.functions.renderWeaponStore},
-                        gasstation: {linktext:" Handla hos jiffys", linkfunction:GasStation.functions.renderGasStation}
+  SPECIAL_TILE_LINKS: { uoffice: {linktext:" Gå in på arbetsförmedlingen" },
+                        vehiclestore: {linktext:" Besök Big Dealys fina etablissemang"},
+                        weaponstore: {linktext:" Entra Willy Johnssons domäner"},
+                        gasstation: {linktext:" Handla hos jiffys"}
                       }
 
 }

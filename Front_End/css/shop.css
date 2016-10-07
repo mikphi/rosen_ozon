@@ -1,0 +1,66 @@
+.shop
+{
+  width:700px;
+  z-index:10000;
+  background:none;
+  position:absolute;
+  left:50%;
+  top: 100px;
+  margin-left:-350px;
+  background-color:white;
+  color:#006999;
+  display: none;
+}
+
+#shop-item-list {
+  height:300px;
+  overflow-y: scroll;
+  margin-bottom:20px;
+}
+
+#shop-focus-item {
+
+  height:160px;
+  margin:10px;
+  padding:10px;
+}
+
+.vehicle-shop {
+
+    background-color:#FF9900;
+    color:black;
+    background-image: url('../images/menus/vehicle_bg.png');
+    background-size:cover;
+}
+
+.vehicle-shop #shop-focus-item
+{
+  background-color:rgba(244, 153, 25,0.4);
+  border-radius:4px;
+}
+
+.weapon-shop {
+
+
+    background: :none;
+    background-color:#467c45;
+    color:black;
+}
+
+.weapon-shop #shop-focus-item
+{
+  background-color:rgba(49, 87, 48,0.5);
+  border-radius:4px;
+}
+
+.uoffice-shop
+{
+  background-color:white;
+  color:#006999;
+}
+
+.uoffice-shop #shop-focus-item
+{
+  background-color:#D6D6D6;
+  border-radius:4px;
+}

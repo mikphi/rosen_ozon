@@ -11,11 +11,11 @@ var Betongen = {
         this.daySettings = this.functions.setDaySettings();
         console.log(this.daySettings);
         Map.init(Player.player.mapid);
-        UOffice.init();
+        // UOffice.init();
         Menus.init();
-        WeaponStore.init();
-        VehicleStore.init();
-        GasStation.init();
+        // WeaponStore.init();
+        // VehicleStore.init();
+        // GasStation.init();
 
         $(function () {
             $("#map").draggable();

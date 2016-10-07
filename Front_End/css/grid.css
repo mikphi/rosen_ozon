@@ -2,14 +2,34 @@
 .grid-small {
     float: left;
     width: 33%;
-    
-   
+
+
+}
+
+.grid-x-small{
+  float:left;
+  width:25%;
+}
+
+.grid-x-big{
+  float:left;
+  width:75%;
+}
+
+.grid-half{
+  float:right;
+  width:50%;
 }
 
 .grid-big {
     float: left;
     width: 66%;
-  
+
 }
 
+.grid {
 
+    width: 100%;
+    overflow:auto;
+
+}
