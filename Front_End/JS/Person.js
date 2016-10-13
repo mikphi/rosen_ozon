@@ -26,14 +26,22 @@ Person.functions = {
 
       //render actions
       $actions = $("#person-actions");
+      $actions.empty();
       if(item.energy >= item.energytomove)
       {
-        $a = $("<div>");
-        $a.on("click", function () { Item.functions.openMoveOptions() });
-        $a.text("Flytta");
-        $actions.append($a);
+        $div = $("<div>");
+        $div.on("click", function () { Item.functions.openMoveOptions() });
+        $div.text("Flytta");
+        $actions.append($div);
       }
-
+      if (tile.tiletype != "normal")
+      {
+           $div = $("<div>");
+           $div.on("click", function () { Shop.init(tile.tileid)});
+           //$a.on("click", function () { Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linkfunction() });
+           $div.text(Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linktext);
+           $actions.append($div);
+      }
       //$divs.append("<img src='images/persons/1profile.png'>");
 
       //

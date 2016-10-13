@@ -139,3 +139,35 @@
     background-color:#ff6a00;
     margin-right:1px;
 }
+#vehicle {
+    margin-left: -400px;
+    margin-top:-100px;
+    width:400px;
+    display:block;
+    background-image: url('../images/menus/vehicle_bg.png');
+}
+
+#vehicle p {
+    width:92px;
+    height:70px;
+    float:left;
+    margin:2px;
+    cursor:pointer;
+    padding-top:5px;
+
+}
+
+#vehicle-content { 
+
+  height:170px;
+  overflow-y:scroll;
+    margin-top:-10px;
+}
+
+    #vehicle p:hover {
+        background-color:#1e1e1e;
+    }
+
+#vehicle img {
+        width:80px;
+    }

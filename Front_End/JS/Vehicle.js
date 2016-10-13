@@ -36,7 +36,6 @@ Vehicle.functions = {
 
     renderPassenger: function (vehicle) {
 
-        console.log("hej");
         $seatsContent = $("<div>");
         $seatsContent.addClass("vehicle-seats-content");
         $seatsContent.append("<div>" + vehicle.passengers.length + " av " + vehicle.seats + " säten upptagna</div>");
@@ -84,7 +83,56 @@ Vehicle.functions = {
         return $seatsContent;
 
     },
+    displayMenu: function (item) {
 
+        Map.itemActive = item;
+        Map.isItemClicked = true;
+        //var constants = Item.functions.getConstants(item);
+
+        var tile = _.findWhere(Map.tiles, { tileid: item.tileid });
+
+        //item.energy >= constants.ENERGY_TO_MOVE_ONE_TILE ? $("#item-make-move").show() : $("#item-make-move").hide();
+        //gemensamt
+        $(".right-content").empty();
+        $menu = $("#vehicle");
+        $menu.css({
+            display: "block",
+            top: parseInt($("#tile" + tile.tileid).css("top")),
+            left: parseInt($("#tile" + tile.tileid).css("left")),
+            height: "auto"
+
+        });
+
+
+
+        $("#vehicle-name").text(item.name);
+        $("#vehicle-content").empty();
+        $("#vehicle-picture").attr("src", "images/" + item.img);
+        this.renderFuelLevel(item);
+
+        $html = $("#vehicle-stuff");
+        $html.empty();
+        $html.append(this.renderPassenger(item));
+
+        $a = $("<a>");
+        $a.on("click", function () { Item.functions.openMoveOptions() });
+        $a.text("Flytta");
+        $html.append($a);
+
+        var tile = _.findWhere(Map.tiles, { tileid:item.tileid });
+
+        // if(tile.tiletype == "gasstation")
+        // {
+        //   $a = $("<a>");
+        //   $a.on("click", function()
+        //   {
+        //     GasStation.functions.renderGasStation();
+        //   });
+        //   $a.text(" Slajda upp vid Jiffys pump");
+        //
+        //   $html.append($a);
+        // }s
+    },
     renderPassangerIcons: function (passengers) {
         if (passengers.length > 0) {
             var html = "<div class='vehicle-passenger-icons'>";

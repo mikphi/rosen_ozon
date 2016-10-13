@@ -1,7 +1,7 @@
 ﻿var Menus = {
     init: function ()
     {
-        $("#menu-close-item-menu").on("click", function () {
+        $(".menu-close-item-menu").on("click", function () {
             Menus.functions.closeItemMenu();
         });
 
@@ -26,8 +26,8 @@ Menus.functions = {
     },
 
     closeItemMenu: function () {
-        $("#menu-item").hide();
-
+        $("#vehicle").hide();
+        $("#person").hide();
         Map.isItemClicked = false;
 
         if (Map.markerActivated) {
@@ -49,6 +49,3 @@ Menus.functions = {
         $(elm).hide();
     }
 }
-
-
-

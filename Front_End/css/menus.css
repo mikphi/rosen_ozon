@@ -80,7 +80,12 @@
     padding:6px 6px 3px 4px;
     font-size:8pt;
 }
-
+.menu-close-item-menu {
+  float:right;
+  font-weight:bold;
+  padding:6px 6px 3px 4px;
+  font-size:8pt;
+}
 .menu-top
 {
     border-bottom:1px solid #1e1e1e;

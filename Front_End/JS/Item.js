@@ -30,7 +30,7 @@ Item.functions = {
 
         }
 
-        
+
         var html = "<div class='"+constants.CSS_CLASS+"' style='left:" + left + "px;margin-top:" + topMargin + "' id='item-id" + item.itemid + "'>";
 
         if (item.type == "person") {
@@ -57,7 +57,7 @@ Item.functions = {
             $("#item-id" + item.itemid).on("mousedown", function () { Person.functions.displayMenu(item) });
           }
           else {
-            $("#item-id" + item.itemid).on("mousedown", function () { Item.functions.openItemMenu(item) });
+            $("#item-id" + item.itemid).on("mousedown", function () { Vehicle.functions.displayMenu(item) });
           }
 
     },
@@ -154,8 +154,17 @@ Item.functions = {
         Map.tiles.forEach(function (t) { t.energytogethere = 0; });
 
         if (item.passengers) { Vehicle.functions.changeTileIdOnPassengers(item.passengers, tile.tileid); }
+
         Item.functions.renderItem(item);
-        Item.functions.openItemMenu(item);
+        if(item.type === 'vehicle'){
+          Vehicles.functions.displayMenu(item);
+        }
+        if(item.type === 'person'){
+          Person.functions.displayMenu(item);
+        }
+        else {
+          console.log('wtf?')
+        }
         $("#menu-move").hide();
         $(".tile-action-marker").css("display", "none");
 
