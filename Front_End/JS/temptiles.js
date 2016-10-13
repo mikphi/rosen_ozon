@@ -1,7 +1,7 @@
 
 var TEMPITEMS = [
-    { tileid: 35, name: "Camme Pipps", img: "persons/1.png", smallimg:"persons/1head.png", color: "#6ED2FA", energy: 100, playerid: 1, itemid: 1000, mapid: 10, type: "person", persontype:"lanare",  invehicle: true, persontype: "ragger",energytomove: 20  },
-    { tileid: 35, name: "Berra Blonde", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 100, playerid: 1, itemid: 1001, mapid: 10, type: "person",persontype:"lanare",  invehicle: true, persontyp: "fjortis",energytomove: 20   },
+    { tileid: 105, name: "Camme Pipps", img: "persons/1.png", smallimg:"persons/1head.png", color: "#6ED2FA", energy: 100, playerid: 1, itemid: 1000, mapid: 10, type: "person", persontype:"lanare",  invehicle: true, persontype: "ragger",energytomove: 20  },
+    { tileid: 105, name: "Berra Blonde", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 100, playerid: 1, itemid: 1001, mapid: 10, type: "person",persontype:"lanare",  invehicle: true, persontyp: "fjortis",energytomove: 20   },
 { tileid: 90, name: "Biggie Blackie", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 60, playerid: 1, itemid: 1002, mapid: 10, type: "person",persontype:"lanare", invehicle: false, persontype: "thug",energytomove: 20   },
     { tileid: 91, name: "Snickar- boan", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 40, playerid: 1, itemid: 1003, mapid: 10, type: "person", persontype: "lanare", invehicle: false, persontype: "thug" ,energytomove: 20  },
      { tileid: 46, name: "Katten Jansson", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 100, playerid: 1, itemid: 1010, mapid: 10, type: "person", persontype: "lanare", invehicle: false, persontype: "thug",energytomove: 20   },
@@ -17,6 +17,27 @@ var TEMPITEMS = [
         { tileid: 35, name: "saab 900 megamaxi", img: "vehicles/saab900.png", color: "#6ED2FA", energy: 50, playerid: 1, itemid: 2022, mapid: 10, type: "vehicle", seats: 5,vehicletype:"car", passengers: [], fuelcapacity: 60,energytomove: 2  }
      ]
 
+
+     var TEMPPERSONS = [
+         { tileid: 35, name: "Camme Pipps", img: "persons/1.png", smallimg:"persons/1head.png", color: "#6ED2FA", energy: 100, playerid: 1, itemid: 1000, mapid: 10, type: "person", persontype:"lanare",  invehicle: true, persontype: "ragger",energytomove: 20  },
+         { tileid: 35, name: "Berra Blonde", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 100, playerid: 1, itemid: 1001, mapid: 10, type: "person",persontype:"lanare",  invehicle: true, persontyp: "fjortis",energytomove: 20   },
+     { tileid: 90, name: "Biggie Blackie", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 60, playerid: 1, itemid: 1002, mapid: 10, type: "person",persontype:"lanare", invehicle: false, persontype: "thug",energytomove: 20   },
+         { tileid: 91, name: "Snickar- boan", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 40, playerid: 1, itemid: 1003, mapid: 10, type: "person", persontype: "lanare", invehicle: false, persontype: "thug" ,energytomove: 20  },
+          { tileid: 46, name: "Katten Jansson", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 100, playerid: 1, itemid: 1010, mapid: 10, type: "person", persontype: "lanare", invehicle: false, persontype: "thug",energytomove: 20   },
+         { tileid: 46, name: "Svikarn", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 90, playerid: 1, itemid: 1012, mapid: 10, type: "person", persontype: "lanare", invehicle: false, persontype: "thug",energytomove: 20   },
+         { tileid: 46, name: "Frank Hvam", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 40, playerid: 1, itemid: 1013, mapid: 10, type: "person", persontype: "lanare", invehicle: false, persontype: "thug",energytomove: 20   },
+         { tileid: 104, name: "Charlie Sheen", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 70, playerid: 1, itemid: 1056, mapid: 10, type: "person", persontype: "lanare", invehicle: false, persontype: "thug" ,energytomove: 20  },
+         { tileid: 105, name: "John Häggerud", img: "persons/1.png", smallimg: "persons/1head.png", color: "#6ED2FA", energy: 100, playerid: 1, itemid: 1346, mapid: 10, type: "person", persontype: "lanare", invehicle: false, persontype: "thug" ,energytomove: 20  },
+         { tileid: 38, name: "Bosse Boobdoktor", img: "persons/1.png", smallimg: "persons/1head.png", color: "#02ff2c", energy: 70, playerid: 10, itemid: 1006, mapid: 10, type: "person", persontype: "lanare", invehicle: false, persontype: "thug",energytomove: 20   },
+         { tileid: 7, name: "Hektor Sandfalt", img: "persons/1.png", smallimg: "persons/1head.png", color: "#02ff2c", energy: 60, playerid: 10, itemid: 1004, mapid: 10, type: "person", persontype: "lanare", invehicle: false, persontype: "thug",energytomove: 20   },
+            ]
+
+var TEMPVEHICLES =
+[ { tileid: 105, name: "saab 900 knack", img: "vehicles/saab900.png", color: "#6ED2FA", energy: 10, playerid: 1, itemid: 2000, mapid: 10, type: "vehicle",vehicletype:"car", seats: 5, passengers: [1000, 1001], fuelcapacity: 60, energytomove: 2  },
+   { tileid: 35, name: "900 loose can edt", img: "vehicles/saab900.png", color: "#6ED2FA", energy: 50, playerid: 1, itemid: 2020, mapid: 10, type: "vehicle",vehicletype:"car", seats: 5, passengers: [], fuelcapacity: 60,energytomove: 2  },
+    { tileid: 35, name: "900 tjuv edt", img: "vehicles/saab900.png", color: "#6ED2FA", energy: 50, playerid: 1, itemid: 2021, mapid: 10, type: "vehicle", seats: 5,vehicletype:"car", passengers: [], fuelcapacity: 60,energytomove: 2  },
+     { tileid: 35, name: "saab 900 megamaxi", img: "vehicles/saab900.png", color: "#6ED2FA", energy: 50, playerid: 1, itemid: 2022, mapid: 10, type: "vehicle", seats: 5,vehicletype:"car", passengers: [], fuelcapacity: 60,energytomove: 2  }
+];
 
 
 

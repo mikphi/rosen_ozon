@@ -21,7 +21,7 @@ Player.functions = {
     },
 
     show: function(player){
-      console.log(player)
+
     },
 
     renderPlayerInfo:function()
@@ -30,7 +30,7 @@ Player.functions = {
         $("#player-name").text(player.name);
         $("#player-money").text(player.money + " pixar");
 
-        var persons = _.filter(Map.items, function (item) { return item.type == "person" && item.playerid == player.id; });
+        var persons = _.filter(Map.persons, function (item) { return item.playerid == player.id; });
 
         var options = { islinkable: true, appendelement: "#menu-persons-content", linkfunction: this.show, displayheader:false, imgheight:'23px', imgwidth:'23px',oddcolor:"#353333",evencolor:"#232222" };
         var propertiestorender = ["smallimg", "name", "persontype"];
@@ -41,8 +41,8 @@ Player.functions = {
         var list = new List(persons, propertiestorender, options, columns);
 
 
-
-        var vehicles = _.filter(Map.items, function (item) { return item.type != "person" && item.playerid == player.id; });
+        
+        var vehicles = _.filter(Map.vehicles, function (vehicle) { return vehicle.playerid == player.id; });
 
         var options = { islinkable: true, appendelement: "#menu-vehicles-content", linkfunction: this.show, displayheader:false, imgheight:'25px', imgwidth: '50px',oddcolor:"#353333",evencolor:"#232222" };
         var propertiestorender = ["img", "name"];

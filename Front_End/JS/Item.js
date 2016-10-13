@@ -13,7 +13,6 @@ Item.functions = {
         var belongsToPlayer = item.playerid == Player.player.id;
 
         var constants = Item.functions.getConstants(item);
-
         if (keepoldposition)
         {
            left = parseInt($("#item-id" + item.itemid).css("left"));
@@ -28,14 +27,19 @@ Item.functions = {
         if (!keepoldposition) {
             left = ($("#tile" + tile.tileid).children("." + constants.CSS_CLASS).length + 1) * constants.LEFT_STARTING_POSITION;
             topMargin = constants.LEFT_STARTING_POSITION * ($("#tile" + tile.tileid).children("." + constants.CSS_CLASS).length) == constants.LEFT_STARTING_POSITION ? constants.TOP_MARGIN : "0px";
+
         }
+
+        
         var html = "<div class='"+constants.CSS_CLASS+"' style='left:" + left + "px;margin-top:" + topMargin + "' id='item-id" + item.itemid + "'>";
 
         if (item.type == "person") {
+
             html += "<div class='item-name' style='color:"+item.color+"'>" + item.name + "</div>";
             html += "<img src='images/" + item.img + "'>";
             if(belongsToPlayer)
                 html +=  Person.functions.renderVerticalBar(item.energy,30,5);
+
         } else
         {
             html += "<img src='images/" + item.img + "'>";
@@ -48,7 +52,13 @@ Item.functions = {
         $("#tile" + tile.tileid).append(html);
 
         if(belongsToPlayer)
+          if(item.type == "person")
+          {
+            $("#item-id" + item.itemid).on("mousedown", function () { Person.functions.displayMenu(item) });
+          }
+          else {
             $("#item-id" + item.itemid).on("mousedown", function () { Item.functions.openItemMenu(item) });
+          }
 
     },
 

@@ -36,7 +36,7 @@ Vehicle.functions = {
 
     renderPassenger: function (vehicle) {
 
-
+        console.log("hej");
         $seatsContent = $("<div>");
         $seatsContent.addClass("vehicle-seats-content");
         $seatsContent.append("<div>" + vehicle.passengers.length + " av " + vehicle.seats + " säten upptagna</div>");
@@ -51,6 +51,7 @@ Vehicle.functions = {
                 if (passenger) {
                     $passenger = $("<div>");
                     $passenger.addClass("vehicle-passenger");
+
                     var passengerObject = _.findWhere(Map.items, { itemid: passenger });
 
                     $passengerImg = $("<div>");

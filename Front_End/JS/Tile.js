@@ -23,8 +23,8 @@ Tile.functions = {
             html += walls.replace(/Layer_1/g, "wallno" + tile.tileid);
         }
 
-        console.log(tile.tiletype);
-          html += "<img src='images/tiles/tile_" + tile.tileno + "/tile_" + tile.tileno + "_windows.png' />";
+
+        html += "<img src='images/tiles/tile_" + tile.tileno + "/tile_" + tile.tileno + "_windows.png' />";
 
         html += Tile.highlight.renderhighlights(tile.tileno, tileid);
         html += "<img src='images/tiles/tile_" + tile.tileno + "/tile_" + tile.tileno + "_windows_night.png' class='tile-windows-night' style='display:" + Betongen.daySettings.displaywindows + "'/>";
@@ -81,8 +81,7 @@ Tile.functions = {
 
                         if (isClicked) {
                             var tilediv = $("#tile" + tile.tileid);
-                            console.log(tilediv);
-                            console.log(tile);
+                        
                             var menutilediv = $("#menu-tile");
                             menutilediv.css({
                                 display: "block",

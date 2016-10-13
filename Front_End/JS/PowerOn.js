@@ -7,9 +7,7 @@ var Betongen = {
     {
         Player.init();
         this.date = new Date();
-
         this.daySettings = this.functions.setDaySettings();
-        console.log(this.daySettings);
         Map.init(Player.player.mapid);
         // UOffice.init();
         Menus.init();
@@ -51,14 +49,13 @@ Betongen.functions = {
 
     gettime: function ()
     {
-        console.log(Betongen.date);
+
         var date = Betongen.date;
         return this.addZero(date.getHours()) + ":" + this.addZero(date.getMinutes());
     },
 
     setDaySettings: function () {
         var time = Betongen.functions.gettime();
-        console.log(time);
         if (time > Betongen.constants.Evening.starts && time <= Betongen.constants.Night.starts) {
             return Betongen.constants.Evening
         }

@@ -1,7 +1,9 @@
 var Map = {
     mapId: null,
     tiles: {},
-    items: {},
+    //items: {},
+    persons: {},
+    vehicles: {},
     itemActive: {},
     coordinateSystem: {},
     mouseCoordinateX: 0,
@@ -16,12 +18,16 @@ var Map = {
         this.mapId = mapid;
         this.tiles = this.functions.fetchTiles(this.mapId);
         this.items = this.functions.fetchItems(this.mapId);
+        //this.persons = this.functions.fetchPersons(this.mapId);
+        //this.vehicles = this.functions.fetchVehicles(this.mapId);
         //tempfunction to add attributes
         tempfunctions.addAttribute(this.items);
 
         this.coordinateSystem = new Array();
         this.functions.renderMap(this.tiles);
         this.functions.renderItems(this.items);
+       //this.functions.renderItems(this.persons);
+       //this.functions.renderItems(this.vehicles);
         this.functions.initCoordinateSystem();
         this.functions.getCoordinateOfMouseClick();
 
@@ -40,6 +46,14 @@ Map.functions = {
     fetchItems: function (mapid) {
         return TEMPITEMS;
     },
+
+    // fetchVehicles: function (mapid) {
+    //     return TEMPVEHICLES;
+    // },
+    //
+    // fetchPersons: function (mapid) {
+    //     return TEMPPERSONS;
+    // },
 
     renderMap: function(tiles)
     {
@@ -80,6 +94,20 @@ Map.functions = {
                 Item.functions.renderItem(items[i]);
         }
     },
+
+    // renderPersons: function (items) {
+    //
+    //     for (var i = 0; i < items.length; i++) {
+    //             Person.functions.renderItem(items[i]);
+    //     }
+    // },
+    //
+    // renderVehicles: function (items) {
+    //
+    //     for (var i = 0; i < items.length; i++) {
+    //             Vehicle.functions.renderItem(items[i]);
+    //     }
+    // },
 
     adjustMapLayout: function () {
 
