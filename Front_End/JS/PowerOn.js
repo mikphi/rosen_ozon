@@ -11,6 +11,7 @@ var Betongen = {
         Map.init(Player.player.mapid);
         // UOffice.init();
         Menus.init();
+        Park.init();
         // WeaponStore.init();
         // VehicleStore.init();
         // GasStation.init();

@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/supreme.css">
     <link rel="stylesheet" type="text/css" href="css/tile.css">
     <link rel="stylesheet" type="text/css" href="css/map.css">
-
+    <link rel="stylesheet" type="text/css" href="css/park.css">
     <link rel="stylesheet" type="text/css" href="css/person.css">
     <link rel="stylesheet" type="text/css" href="css/menus.css">
     <link rel="stylesheet" type="text/css" href="css/item.css">
@@ -26,7 +26,7 @@
             <div id="sky"></div>
             <div id="land"></div>
 
-            <div id="menu-item" class="dialog draggable">
+            <!-- <div id="menu-item" class="dialog draggable">
                 <div class="menu-top">
                     <a href="#" class="menu-close" class="menu-close-item-menu">X</a>
                      <h4 id="menu-item-name"></h4>
@@ -34,7 +34,7 @@
                 <div class="right-content"></div>
                 <img src="" id="item-picture"/>
                 <div id="item-specific-content"></div>
-            </div>
+            </div> -->
 
             <div id="vehicle" class="dialog draggable">
                 <div class="menu-top">
@@ -80,7 +80,19 @@
                 </div>
             </div>
         </div>
-
+        <div id="park" class="dialog draggable" >
+            <div class="menu-top">
+                <a href="#" class="menu-close menu-generic-close">X</a>
+                <h4>Park</h4>
+            </div>
+            <div id="park-image">
+              <img id="park-tile-picture" src="images/tiles/tile_05/tile_05_base.png" width="361"/>
+              <div class="park-section" data-index-number="1"></div>
+              <div class="park-section" data-index-number="2"></div>
+              <div class="park-section" data-index-number="3"></div>
+              <div class="park-section" data-index-number="4"></div>
+            </div>
+        </div>
         <div class="shop dialog draggable">
           <div class="menu-top">
               <a href="#" class="menu-close menu-generic-close">X</a>
@@ -248,7 +260,7 @@
     <script type="text/javascript" src="JS/Map.js"></script>
     <script type="text/javascript" src="JS/temptiles.js"></script>
     <script type="text/javascript" src="JS/Player.js"></script>
-    
+
     <script type="text/javascript" src="JS/Shop.js"></script>
     <script type="text/javascript" src="JS/Tile.js"></script>
     <script type="text/javascript" src="JS/List.js"></script>
@@ -260,7 +272,7 @@
     <script type="text/javascript" src="JS/Vehicle.js"></script>
     <script type="text/javascript" src="JS/Inventory.js"></script>
     <script type="text/javascript" src="JS/Item.js"></script>
-
+    <script type="text/javascript" src="JS/Park.js"></script>
 
 
 </body>

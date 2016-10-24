@@ -99,21 +99,21 @@ Shop.functions = {
       switch(tiletype)
       {
           case "vehiclestore":
-          return Shop.Tempcarscolumns;
-          break;
+            return Shop.Tempcarscolumns;
+            break;
           case "weaponstore":
-          return Shop.Tempweaponscolumns;
-          break;
+            return Shop.Tempweaponscolumns;
+            break;
           case "uoffice":
-          return Shop.Tempuofficecolumns;
-          break;
+            return Shop.Tempuofficecolumns;
+            break;
           case "gasstation":
-          if(Map.itemActive.type == "vehicle")
-          {
-            return Shop.Tempfuelitemscolumns;
-          }
-          return Shop.Tempgasstationitemscolumns;
-          break;
+            if(Map.itemActive.type == "vehicle")
+            {
+              return Shop.Tempfuelitemscolumns;
+            }
+            return Shop.Tempgasstationitemscolumns;
+            break;
 
       }
     },
@@ -123,21 +123,21 @@ Shop.functions = {
         switch(tiletype)
         {
             case "vehiclestore":
-            return Shop.Tempcars;
-            break;
+              return Shop.Tempcars;
+              break;
             case "weaponstore":
-            return Shop.Tempweapons;
-            break;
-              case "uoffice":
-            return Shop.Tempuofficepersons;
-            break;
+              return Shop.Tempweapons;
+              break;
+            case "uoffice":
+              return Shop.Tempuofficepersons;
+              break;
             case "gasstation":
-            if(Map.itemActive.type == "vehicle")
-            {
-              return Shop.Tempfuelitems;
-            }
+              if(Map.itemActive.type == "vehicle")
+              {
+                return Shop.Tempfuelitems;
+              }
             return Shop.Tempgasstationitems;
-            break;
+              break;
         }
     },
 

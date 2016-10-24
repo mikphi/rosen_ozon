@@ -216,6 +216,8 @@ Map.functions = {
             var y = parseInt(i / maxtilesinrow) + 1;
             var tileno = "0" + parseInt((Math.random() * (Map.constants.NUMBER_OF_TILETYPES - 1) + 1));
             var tiletype = "normal";
+            var subtype = "residence";
+
             var ownership = "";
 
             if (x == 7 && y == 7)
@@ -250,9 +252,21 @@ Map.functions = {
                 ownership = "#22DE21";
 
             }
+            if(x==6 && y == 6)
+            {
+                tiletype = "normal";
+                subtype = "park";
+                tileno = "05";
+                ownership = "#6ED2FA"
 
+            }
 
-            var tile = { tiletype: tiletype, tileno: tileno, ownership: ownership, energytogethere: 0, x: x, y: y, tileid: i }
+            if(tileno == "05" && tiletype == "normal"){
+              subtype = "park";
+            }
+            var tile = {
+              tiletype: tiletype, tileno: tileno, ownership: ownership,
+              energytogethere: 0, x: x, y: y, tileid: i, subtype: subtype}
             tiles.push(tile);
         }
 

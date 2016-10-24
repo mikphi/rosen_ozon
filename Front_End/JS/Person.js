@@ -42,9 +42,16 @@ Person.functions = {
            $div.text(Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linktext);
            $actions.append($div);
       }
+      if(tile.subtype === "park" && Map.itemActive.persontype == "drugdealer" && tile.ownership == Player.player.color){
+          $div = $("<div>");
+          $div.on("click", function () { Park.functions.parkmenushow(tile.tileid)});
+          //$a.on("click", function () { Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linkfunction() });
+          $div.text("Hej park");
+          $actions.append($div);
+      }
 
 
-      if (tile.ownership != Player.functions.getPlayer().color && tile.tiletype == "normal") {
+      if (tile.ownership != Player.player.color && tile.tiletype == "normal") {
           $div = $("<div>");
           $div.on("click", function () { Tile.functions.changeOwnershipOfTile(item.tileid) });
           $div.text(" Ta över området");
