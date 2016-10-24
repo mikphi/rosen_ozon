@@ -81,7 +81,7 @@ Tile.functions = {
 
                         if (isClicked) {
                             var tilediv = $("#tile" + tile.tileid);
-                        
+
                             var menutilediv = $("#menu-tile");
                             menutilediv.css({
                                 display: "block",
@@ -152,10 +152,10 @@ Tile.functions = {
 };
 
 Tile.constants = {
-  SPECIAL_TILE_LINKS: { uoffice: {linktext:" Gå in på arbetsförmedlingen" },
-                        vehiclestore: {linktext:" Besök Big Dealys fina etablissemang"},
-                        weaponstore: {linktext:" Entra Willy Johnssons domäner"},
-                        gasstation: {linktext:" Handla hos jiffys"}
+  SPECIAL_TILE_LINKS: { uoffice: {linktext:" AF" },
+                        vehiclestore: {linktext:" BD"},
+                        weaponstore: {linktext:" WJV"},
+                        gasstation: {linktext:" JGS"}
                       }
 
 }

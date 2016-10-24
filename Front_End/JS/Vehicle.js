@@ -63,7 +63,7 @@ Vehicle.functions = {
                         passengerObject.invehicle = false;
                         Item.functions.renderItem(passengerObject);
                         vehicle.passengers = _.reject(vehicle.passengers, function (passenger) { return passenger == passengerObject.itemid; });
-                        Item.functions.openItemMenu(vehicle);
+                        Vehicle.functions.displayMenu(vehicle);
                         Item.functions.renderItem(vehicle,true);
                     });
                     $a.text(" kliv ur");
@@ -87,13 +87,9 @@ Vehicle.functions = {
 
         Map.itemActive = item;
         Map.isItemClicked = true;
-        //var constants = Item.functions.getConstants(item);
 
         var tile = _.findWhere(Map.tiles, { tileid: item.tileid });
 
-        //item.energy >= constants.ENERGY_TO_MOVE_ONE_TILE ? $("#item-make-move").show() : $("#item-make-move").hide();
-        //gemensamt
-        $(".right-content").empty();
         $menu = $("#vehicle");
         $menu.css({
             display: "block",
@@ -103,23 +99,16 @@ Vehicle.functions = {
 
         });
 
-
-
         $("#vehicle-name").text(item.name);
         $("#vehicle-content").empty();
         $("#vehicle-picture").attr("src", "images/" + item.img);
-        this.renderFuelLevel(item);
+        Vehicle.functions.renderFuelLevel(item);
 
         $html = $("#vehicle-stuff");
         $html.empty();
         $html.append(this.renderPassenger(item));
 
-        $a = $("<a>");
-        $a.on("click", function () { Item.functions.openMoveOptions() });
-        $a.text("Flytta");
-        $html.append($a);
-
-        var tile = _.findWhere(Map.tiles, { tileid:item.tileid });
+        Vehicle.functions.renderActions(item,tile);
 
         // if(tile.tiletype == "gasstation")
         // {
@@ -133,6 +122,32 @@ Vehicle.functions = {
         //   $html.append($a);
         // }s
     },
+
+    renderActions: function(item,tile)
+    {
+      $appndelm = $("#vehicle-actions");
+      //add movement action
+      $appndelm.empty();
+      $div = $("<div>");
+      $div.on("click", function () { Item.functions.openMoveOptions() });
+      $div.text("Flytta");
+      $appndelm.append($div);
+
+      if(tile.tiletype == "gasstation")
+      {
+        $div = $("<div>");
+        $div.on("click", function()
+        {
+          Shop.init(tile.tiletype);
+          //GasStation.functions.renderGasStation();
+        });
+        $div.text("TNKA");
+
+        $appndelm.append($div);
+      }
+
+    },
+
     renderPassangerIcons: function (passengers) {
         if (passengers.length > 0) {
             var html = "<div class='vehicle-passenger-icons'>";
@@ -151,7 +166,8 @@ Vehicle.functions = {
     },
 
     renderFuelLevel: function (vehicle) {
-        $(".right-content").append("<div class='vehicle-fuel'><img src='images/fueltank.png'><br />" + vehicle.energy + " liter<div> ( " + (vehicle.fuelcapacity - vehicle.energy) + " ltr till full tank)</div></div>");
+        $("#vehicle-fuel-section").empty();
+        $("#vehicle-fuel-section").append("<div class='vehicle-fuel'><img src='images/fueltank.png'><br />" + vehicle.energy + " liter<div> ( " + (vehicle.fuelcapacity - vehicle.energy) + " ltr till full tank)</div></div>");
     },
 
     changeTileIdOnPassengers: function (passengers,tileid) {

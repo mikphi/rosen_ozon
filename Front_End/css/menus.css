@@ -95,6 +95,12 @@
     background-color: rgba(0,0,0,0.3);
     }
 
+.menu-top a
+{
+  float:right;
+  padding:5px;
+}
+
 #menu-player {
     width:300px;
     height:200px;

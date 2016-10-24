@@ -37,11 +37,21 @@ Person.functions = {
       if (tile.tiletype != "normal")
       {
            $div = $("<div>");
-           $div.on("click", function () { Shop.init(tile.tileid)});
+           $div.on("click", function () { Shop.init(tile.tiletype)});
            //$a.on("click", function () { Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linkfunction() });
            $div.text(Tile.constants.SPECIAL_TILE_LINKS[tile.tiletype].linktext);
            $actions.append($div);
       }
+
+
+      if (tile.ownership != Player.functions.getPlayer().color && tile.tiletype == "normal") {
+          $div = $("<div>");
+          $div.on("click", function () { Tile.functions.changeOwnershipOfTile(item.tileid) });
+          $div.text(" Ta över området");
+           $actions.append($div);
+      }
+
+      $actions.append(this.renderEnterCarOptions(item));
       //$divs.append("<img src='images/persons/1profile.png'>");
 
       //

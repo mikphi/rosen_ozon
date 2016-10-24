@@ -13,7 +13,10 @@
 
         $("#menu-close-notification-msg").click(function () { $(this).parent().hide() });
 
-        $(".menu-generic-close").click(function () { $(this).parent().parent().hide() });
+        $(".menu-generic-close").click(function () {
+          $(this).parent().parent().hide();
+          
+         });
     }
 }
 

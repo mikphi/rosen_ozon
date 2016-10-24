@@ -145,7 +145,10 @@
     width:400px;
     display:block;
     background-image: url('../images/menus/vehicle_bg.png');
+    color:black;
 }
+
+#vehicle a{ color:black;}
 
 #vehicle p {
     width:92px;
@@ -169,5 +172,26 @@
     }
 
 #vehicle img {
-        width:80px;
+
     }
+
+#vehicle-fuel-section
+{
+  float:right;
+  padding:10px 40px 0px 0px;
+}
+
+#vehicle-actions
+{
+  overflow:auto;
+  margin:10px;
+}
+
+#vehicle-actions div
+{
+  float:left;
+  width:40px;
+  height:40px;
+  border:1px solid red;
+  cursor:pointer;
+}

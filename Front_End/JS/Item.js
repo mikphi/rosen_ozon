@@ -157,7 +157,7 @@ Item.functions = {
 
         Item.functions.renderItem(item);
         if(item.type === 'vehicle'){
-          Vehicles.functions.displayMenu(item);
+          Vehicle.functions.displayMenu(item);
         }
         if(item.type === 'person'){
           Person.functions.displayMenu(item);
